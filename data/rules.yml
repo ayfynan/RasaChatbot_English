@@ -11,3 +11,13 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Provide information about a vegetable when asked
+  condition:
+      # This rule is triggered when the vegetable slot is set
+      - slot_was_set:
+          - Vegetable
+  steps:
+      - intent: ask_about_vegetable
+      - action: utter_about_vegetable
+

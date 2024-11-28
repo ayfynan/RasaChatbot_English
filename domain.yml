@@ -6,28 +6,86 @@ intents:
   - affirm
   - deny
   - mood_great
-  - mood_unhappy
   - bot_challenge
+  - ask_about_vegetable
+
+entities:
+  - Vegetable
+
+actions:
+  - utter_about_vegetable
+  - utter_about_potato
+  - utter_about_sweet_potato
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Hey! How are you?"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
+  # responses.yml
+  utter_about_vegetable:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar spinach
+      text: "Malabar spinach, scientifically known as Basella alba (green-stemmed) or Basella rubra (red-stemmed), is a tropical perennial vine that is widely cultivated as an annual vegetable."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: "Potato (Solanum tuberosum) is one of the major crops cultivated in Bangladesh, primarily during the winter (Rabi) season. It is valued for its adaptability, productivity, and economic importance."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: "Sweet potato (Ipomoea batatas) is a widely cultivated crop in Bangladesh due to its adaptability to various soil types and tolerance to drought. It is valued for its nutritional benefits and economic importance."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: "Grass pea (Lathyrus sativus), locally known as 'Khesari,' is a popular pulse crop in Bangladesh due to its ability to thrive under adverse conditions, including drought and poor soils. It is valued for its role in improving soil fertility through nitrogen fixation and is grown mainly during the Rabi season."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: "Chickpea (Cicer arietinum), locally known as 'Chhola,' is an important legume crop in Bangladesh. It is widely grown during the Rabi season due to its drought tolerance and ability to improve soil fertility through nitrogen fixation."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: "Felon lentil (Lens culinaris), locally known as 'Masur Dal,' is an important pulse crop in Bangladesh. It is primarily grown during the Rabi season and is valued for its nutritional content, role in soil fertility improvement through nitrogen fixation, and market demand."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: "Pointed gourd (Trichosanthes dioica), locally known as 'Potol,' is a popular vegetable crop in Bangladesh. It is a perennial, climbing crop cultivated for its tender fruits. Known for its adaptability to warm and humid climates, it is suitable for summer cultivation."
+
+  utter_about_potato:
+    - text: "Potato (Solanum tuberosum) is one of the major crops cultivated in Bangladesh, primarily during the winter (Rabi) season. It is valued for its adaptability, productivity, and economic importance."
+
+  utter_about_sweet_potato:
+    - text: "Sweet potato (Ipomoea batatas) is a widely cultivated crop in Bangladesh due to its adaptability to various soil types and tolerance to drought. It is valued for its nutritional benefits and economic importance."
+
+
+
+
+slots:
+  Vegetable:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: Vegetable
 
 session_config:
   session_expiration_time: 60
