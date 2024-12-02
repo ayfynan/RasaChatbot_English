@@ -36,7 +36,7 @@ nlu:
       - am I talking to a human?
 
   #Vegetable intro
-  - intent: ask_about_vegetable
+  - intent: ask_about_Vegetable
     examples: |
       - What is [Malabar spinach](Vegetable)?
       - Explain what is [Potato](Vegetable).
@@ -47,3 +47,45 @@ nlu:
       - I need information on [Chickpea](Vegetable).
       - Tell me more about [Felon Lentil](Vegetable).
       - What is [Pointed Gourd](Vegetable)?
+
+# Vegetable land preparation information intents
+  - intent: ask_land_preparation_potato
+    examples: |
+      - How do I prepare the land for potatoes?
+      - Tell me about potato land preparation.
+      - What is the land preparation process for potatoes?
+
+  - intent: ask_land_preparation_sweet_potato
+    examples: |
+      - Tell me about land preparation for sweet potatoes
+      - How do you prepare the land for sweet potatoes?
+      - What is the best soil for sweet potatoes?
+      - How do you prepare land for growing sweet potatoes?
+
+  - intent: ask_land_preparation_grass_pea
+    examples: |
+      - Tell me about land preparation for grass pea
+      - How do you prepare the land for grass pea?
+      - What is the best soil for grass pea?
+      - How do you prepare land for growing grass pea?
+
+  - intent: ask_land_preparation_chickpea
+    examples: |
+      - Tell me about land preparation for chickpeas
+      - How do you prepare the land for chickpeas?
+      - What is the best soil for chickpeas?
+      - How do you prepare land for growing chickpeas?
+
+  - intent: ask_land_preparation_felon_lentil
+    examples: |
+      - Tell me about land preparation for felon lentils
+      - How do you prepare the land for felon lentils?
+      - What is the best soil for felon lentils?
+      - How do you prepare land for growing felon lentils?
+
+  - intent: ask_land_preparation_pointed_gourd
+    examples: |
+      - Tell me about land preparation for pointed gourd
+      - How do you prepare the land for pointed gourd?
+      - What is the best soil for pointed gourd?
+      - How do you prepare land for growing pointed gourd?

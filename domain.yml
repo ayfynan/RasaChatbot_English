@@ -7,15 +7,35 @@ intents:
   - deny
   - mood_great
   - bot_challenge
-  - ask_about_vegetable
+  - ask_about_Vegetable
+  - ask_land_preparation_potato
+  - ask_land_preparation_sweet_potato
+  - ask_land_preparation_grass_pea
+  - ask_land_preparation_chickpea
+  - ask_land_preparation_felon_lentil
+  - ask_land_preparation_pointed_gourd
 
 entities:
   - Vegetable
 
+slots:
+  Vegetable:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: Vegetable
+
 actions:
-  - utter_about_vegetable
+  - utter_about_Vegetable
   - utter_about_potato
   - utter_about_sweet_potato
+  - utter_land_preparation_potato
+  - utter_land_preparation_sweet_potato
+  - utter_land_preparation_grass_pea
+  - utter_land_preparation_chickpea
+  - utter_land_preparation_felon_lentil
+  - utter_land_preparation_pointed_gourd
 
 responses:
   utter_greet:
@@ -31,14 +51,15 @@ responses:
     - text: "Bye"
 
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-  # responses.yml
-  utter_about_vegetable:
+    - text: "I am a bot, powered by Rasa." #customize it
+
+  # Responses for Vegetable information
+  utter_about_Vegetable:
     - condition:
         - type: slot
           name: Vegetable
           value: Malabar spinach
-      text: "Malabar spinach, scientifically known as Basella alba (green-stemmed) or Basella rubra (red-stemmed), is a tropical perennial vine that is widely cultivated as an annual vegetable."
+      text: "Malabar spinach, scientifically known as Basella alba (green-stemmed) or Basella rubra (red-stemmed), is a tropical perennial vine that is widely cultivated as an annual Vegetable."
     - condition:
         - type: slot
           name: Vegetable
@@ -68,7 +89,7 @@ responses:
         - type: slot
           name: Vegetable
           value: Pointed Gourd
-      text: "Pointed gourd (Trichosanthes dioica), locally known as 'Potol,' is a popular vegetable crop in Bangladesh. It is a perennial, climbing crop cultivated for its tender fruits. Known for its adaptability to warm and humid climates, it is suitable for summer cultivation."
+      text: "Pointed gourd (Trichosanthes dioica), locally known as 'Potol,' is a popular Vegetable crop in Bangladesh. It is a perennial, climbing crop cultivated for its tender fruits. Known for its adaptability to warm and humid climates, it is suitable for summer cultivation."
 
   utter_about_potato:
     - text: "Potato (Solanum tuberosum) is one of the major crops cultivated in Bangladesh, primarily during the winter (Rabi) season. It is valued for its adaptability, productivity, and economic importance."
@@ -76,16 +97,61 @@ responses:
   utter_about_sweet_potato:
     - text: "Sweet potato (Ipomoea batatas) is a widely cultivated crop in Bangladesh due to its adaptability to various soil types and tolerance to drought. It is valued for its nutritional benefits and economic importance."
 
+  # Response for land preparation 
+  utter_land_preparation_potato:
+    - text: |
+        **Land Selection and Preparation for Potato**:
+        - Potatoes thrive in well-drained loamy or sandy loam soils with good organic matter. The ideal soil pH is between 5.5 and 6.5.
+        - **Plowing**: The land needs to be plowed 3-4 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+        - **Leveling**: The field should be leveled for uniform water distribution.
+        - **Organic Fertilizers**: Applying 8-10 tons of cow dung or compost per acre can improve fertility.
+        - **Soil Treatment**: In case of high soil salinity or acidity, lime or gypsum should be applied as required.
 
+  utter_land_preparation_sweet_potato:
+    - text: |
+        **Land Selection and Preparation for Sweet Potato**:
+        - Sweet potatoes thrive in light, well-drained sandy loam or loamy soils rich in organic matter. The ideal pH range for growth is between 5.5 and 6.5.
+        - **Plowing**: Plow the field 3-4 times to loosen the soil to a depth of 20-25 cm and remove weeds.
+        - **Leveling**: Level the field to ensure even water distribution and avoid waterlogging.
+        - **Raised Beds**: Prepare raised beds or ridges for better drainage and root development.
+        - **Organic Fertilizers**: Apply 8-10 tons of decomposed cow dung or compost per acre during land preparation to enrich the soil.
+        - **Soil Treatment**: If the soil is too acidic, lime should be applied to adjust the pH.
 
+  utter_land_preparation_grass_pea:
+    - text: |
+        **Land Selection and Preparation for Grass Pea**:
+        - Grass pea grows best in well-drained loamy or sandy loam soils with good organic matter content. It can tolerate drought and water stress but does not perform well in waterlogged conditions.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 15-20 cm to loosen the soil and remove weeds. Fine tilth is not mandatory, as grass pea can grow on marginal soils, but proper land preparation improves yield.
+        - **Leveling**: Level the field for even water distribution and to prevent waterlogging, which can cause root rot.
+        - **Organic Fertilizers**: Apply 4-6 tons of decomposed cow dung or compost per acre to improve soil structure and fertility.
+        - **Soil Treatment**: If the soil is too acidic, lime should be applied to adjust the pH to a desirable level (6.0-7.5). Proper drainage systems should be in place to avoid waterlogging.
 
-slots:
-  Vegetable:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: Vegetable
+  utter_land_preparation_chickpea:
+    - text: |
+        **Land Selection and Preparation for Chickpea**:
+        - Chickpeas thrive in well-drained loamy or sandy loam soils with pH levels between 6.0 and 7.5. Avoid heavy clay soils or waterlogged fields, as chickpeas are sensitive to excessive moisture.
+        - **Plowing**: Plow the field 2-3 times to a depth of 15-20 cm to break soil clods and remove weeds.
+        - **Leveling**: Level the field to ensure even water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-7 tons of cow dung or compost per acre to improve soil fertility and structure.
+        - **Soil Treatment**: If the soil is too acidic, lime should be applied to adjust pH levels.
+
+  utter_land_preparation_felon_lentil:
+    - text: |
+        **Land Selection and Preparation for Felon Lentil**:
+        - Felon lentil grows best in well-drained loamy or sandy loam soils with a pH between 6.0 and 7.5. It performs well in areas with moderate moisture and no waterlogging.
+        - **Plowing**: Plow the field 2-3 times to loosen the soil and remove weeds. Ensure the soil is tilled to a depth of 15-20 cm to promote root penetration.
+        - **Leveling**: Level the field for even water distribution and to prevent waterlogging.
+        - **Organic Fertilizers**: Apply 4-6 tons of decomposed cow dung or compost per acre to improve soil structure and fertility.
+        - **Soil Treatment**: If the soil is too acidic, lime should be applied to adjust the pH to a suitable range.
+
+  utter_land_preparation_pointed_gourd:
+    - text: |
+        **Land Selection and Preparation for Pointed Gourd**:
+        - Pointed gourd thrives in well-drained loamy or sandy loam soils with a pH between 6.0 and 7.0. The field should be free of waterlogging and receive adequate sunlight.
+        - **Plowing**: Plow the land 3-4 times to loosen the soil to a depth of 15-20 cm. This ensures better aeration and root penetration.
+        - **Leveling**: Level the field to ensure even water distribution and prevent waterlogging.
+        - **Raised Beds or Pits**: Create raised beds, ridges, or small pits to avoid waterlogging and allow proper root development.
+        - **Organic Fertilizers**: Incorporate 8-10 tons of cow dung or compost per acre to enhance soil fertility.
 
 session_config:
   session_expiration_time: 60

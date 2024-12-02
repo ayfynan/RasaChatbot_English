@@ -2,22 +2,53 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
 
-- rule: Provide information about a vegetable when asked
-  condition:
+  - rule: Provide information about a vegetable when asked
+    condition:
       # This rule is triggered when the vegetable slot is set
       - slot_was_set:
           - Vegetable
-  steps:
-      - intent: ask_about_vegetable
-      - action: utter_about_vegetable
+    steps:
+      - intent: ask_about_Vegetable
+      - action: utter_about_Vegetable
 
+  # Respond to land preparation for Potato
+  - rule: Respond to land preparation for potato
+    steps:
+      - intent: ask_land_preparation_potato
+      - action: utter_land_preparation_potato
+
+  # Respond to land preparation for Sweet Potato
+  - rule: Respond to land preparation for sweet potato
+    steps:
+      - intent: ask_land_preparation_sweet_potato
+      - action: utter_land_preparation_sweet_potato
+
+  - rule: Respond to land preparation for Grass Pea
+    steps:
+      - intent: ask_land_preparation_grass_pea
+      - action: utter_land_preparation_grass_pea
+
+  - rule: Respond to land preparation for Chickpea
+    steps:
+      - intent: ask_land_preparation_chickpea
+      - action: utter_land_preparation_chickpea
+
+  - rule: Respond to land preparation for Felon Lentil
+    steps:
+      - intent: ask_land_preparation_felon_lentil
+      - action: utter_land_preparation_felon_lentil
+
+  - rule: Respond to land preparation for Pointed Gourd
+    steps:
+      - intent: ask_land_preparation_pointed_gourd
+      - action: utter_land_preparation_pointed_gourd
