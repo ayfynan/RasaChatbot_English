@@ -32,7 +32,7 @@ rules:
     steps:
       - intent: ask_land_preparation_sweet_potato
       - action: utter_land_preparation_sweet_potato
-
+  
   - rule: Respond to land preparation for Grass Pea
     steps:
       - intent: ask_land_preparation_grass_pea
@@ -52,3 +52,12 @@ rules:
     steps:
       - intent: ask_land_preparation_pointed_gourd
       - action: utter_land_preparation_pointed_gourd
+
+  - rule: Provide information for seed plantation about a vegetable when asked
+    condition:
+      # This rule is triggered when the vegetable slot is set
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Seed
+      - action: utter_about_Vegetable_Seed

@@ -14,6 +14,7 @@ intents:
   - ask_land_preparation_chickpea
   - ask_land_preparation_felon_lentil
   - ask_land_preparation_pointed_gourd
+  - ask_about_Vegetable_Seed
 
 entities:
   - Vegetable
@@ -36,6 +37,9 @@ actions:
   - utter_land_preparation_chickpea
   - utter_land_preparation_felon_lentil
   - utter_land_preparation_pointed_gourd
+  - utter_about_Vegetable_Seed
+  - utter_about_Vegetable_Sowing
+
 
 responses:
   utter_greet:
@@ -153,6 +157,78 @@ responses:
         - **Raised Beds or Pits**: Create raised beds, ridges, or small pits to avoid waterlogging and allow proper root development.
         - **Organic Fertilizers**: Incorporate 8-10 tons of cow dung or compost per acre to enhance soil fertility.
 
+#Vegetable seed preparation
+  utter_about_Vegetable_Seed:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Seed Selection and Preparation**
+        - •Seed Type: Certified and disease-free potato tubers are selected for planting. Popular varieties in Bangladesh include 'Diamant,' 'Granola,' 'Cardinal,' and local varieties like 'Lal Pakri' and 'Shil Bilati.'
+        - •Seed Size: Seed tubers are cut into pieces weighing around 30-50 grams each, ensuring each piece has at least two “eyes” (the growing buds).
+        - •Seed Treatment: Seed tubers are treated with fungicides like Mancozeb to prevent fungal diseases. After treatment, they are dried in a shaded area before planting.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+       Seed Selection and Preparation
+       - • Seed Type: Sweet potatoes are propagated using vine cuttings rather than seeds. Select healthy vines from disease-free plants to ensure optimal growth.
+       - • Cutting Size: Each vine cutting should be about 20-25 cm long, with at least 3-4 nodes for proper rooting and growth.
+       - • Seed Treatment: Treat the vine cuttings with fungicides like Mancozeb or Captan to prevent fungal infections.
+     
+    - condition:
+      - type: slot
+        name: Vegetable
+        value: Grass Pea
+      text: |
+        **Seed Selection and Preparation**
+        - **Seed Rate**: Use 20-25 kg of seeds per acre. Certified seeds from reliable sources ensure better yield and disease resistance.
+        - **Seed Treatment**: Treat seeds with fungicides like Carbendazim or Thiram to prevent seed-borne fungal infections. Treat seeds with Rhizobium culture to enhance nitrogen fixation and improve soil fertility.
+        - **Varieties**: Recommended varieties in Bangladesh include high-yielding and disease-resistant types, such as BINA Khesari-1, BARI Khesari-2, and traditional local varieties.
+        - **Preparation**: After treatment, allow the vine cuttings to dry in a shaded area for a few hours before planting to reduce the risk of rot and promote healthy root formation.
+
+ 
+    - condition:
+      - type: slot
+        name: Vegetable
+        value: Chickpea      
+      text: |
+          **Seed Selection and Preparation**
+          - **Seed Rate**: Use 20-25 kg of seeds per acre.
+          - **Seed Treatment**: Treat seeds with fungicides like Carbendazim to prevent seed-borne diseases.
+          - **Rhizobium Inoculation**: Use Rhizobium inoculation to enhance nitrogen fixation and promote root growth.
+          - **Varieties**: Common varieties used in Bangladesh include BARI Chola-1, BARI Chola-3, and other drought-tolerant local varieties.
+
+
+    - condition:
+      - type: slot
+        name: Vegetable
+        value: Felon Lentil
+      text: |
+          **Seed Selection and Preparation**
+          - **Seed Rate**: Use 20-25 kg of seeds per acre.
+          - **Seed Treatment**: Treat seeds with fungicides like Carbendazim or Mancozeb to prevent seed-borne diseases.
+          - **Rhizobium Inoculation**: Rhizobium inoculation helps enhance nitrogen fixation, boosting crop growth.
+          - **Varieties**: Recommended varieties include BARI Masur-4, BARI Masur-6, and local high-yielding types.
+
+
+    - condition:
+      - type: slot
+        name: Vegetable
+        value: Pointed Gourd
+      text: |
+            **Seed Selection and Preparation**
+            - **Seed Type**: Pointed gourd is typically propagated through vine cuttings or rooted plants, as it rarely produces viable seeds.
+            - **Vine Selection**: Use healthy vine cuttings, each about 20-25 cm long, with at least 3-4 nodes for effective rooting.
+            - **Vine Treatment**: Allow the vine cuttings to dry in a shaded area for a few hours before planting to prevent rotting and promote strong root development.
+            - **Planting Time**: The ideal planting time is between February and March, when the weather conditions are favorable for vine growth.
+            - **Spacing**: Maintain 1.5-2 meters between rows and 1 meter between plants within each row to allow sufficient space for the vines to spread.
+            - **Support Structure**: Set up bamboo poles, ropes, or nets to create trellises for the climbing vines. This structure improves air circulation, supports the plant, and makes maintenance easier.
+
+       
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

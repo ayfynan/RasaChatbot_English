@@ -89,3 +89,27 @@ nlu:
       - How do you prepare the land for pointed gourd?
       - What is the best soil for pointed gourd?
       - How do you prepare land for growing pointed gourd?
+
+#VEGGIE SEED
+  - intent: ask_about_Vegetable_Seed
+    examples: |
+      - How do I prepare seed for [Potato](Vegetable)?
+      - What is the seed preparation process for [Potato](Vegetable)?
+      - What should I do before planting [Potato](Vegetable)?
+      - Tell me about [Sweet Potato](Vegetable) seed preparation.
+      - What can I do to prepare seed for [Sweet Potato](Vegetable)?
+      - How do I select seeds for [Grass Pea](Vegetable)?
+      - What is the process for preparing seeds of [Grass Pea](Vegetable)?
+      - How should I treat seeds for [Grass Pea](Vegetable)?
+      - Can you tell me about [Chickpea](Vegetable) seed preparation?
+      - What is the seed treatment process for [Chickpea](Vegetable)?
+      - How do I prepare seeds for [Chickpea](Vegetable)?
+      - What are the steps to prepare seeds for [Felon Lentil](Vegetable)?
+      - How should I select seeds for [Felon Lentil](Vegetable)?
+      - Tell me about seed preparation for [Felon Lentil](Vegetable).
+      - What is the seed preparation method for [Felon Lentil](Vegetable)?
+      - How do I prepare vine cuttings for [Pointed Gourd](Vegetable)?
+      - What is the process for preparing [Pointed Gourd](Vegetable) vine cuttings?
+      - Can you guide me on how to prepare seeds or vines for [Pointed Gourd](Vegetable)?
+      - How should I plant [Pointed Gourd](Vegetable) cuttings?
+      - What should I know about preparing [Pointed Gourd](Vegetable) seeds or cuttings?
