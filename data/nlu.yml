@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+#general info
   - intent: greet
     examples: |
       - hey
@@ -35,7 +36,7 @@ nlu:
       - am I talking to a bot?
       - am I talking to a human?
 
-  #Vegetable intro
+#Vegetable intro
   - intent: ask_about_Vegetable
     examples: |
       - What is [Malabar spinach](Vegetable)?
@@ -113,3 +114,33 @@ nlu:
       - Can you guide me on how to prepare seeds or vines for [Pointed Gourd](Vegetable)?
       - How should I plant [Pointed Gourd](Vegetable) cuttings?
       - What should I know about preparing [Pointed Gourd](Vegetable) seeds or cuttings?
+
+# Vegetable sowing
+  - intent: ask_about_Vegetable_Sowing
+    examples: |
+      - When should I sow [Potato](Vegetable)?
+      - What's the best time to plant [Potato](Vegetable)?
+      - How deep should I plant [Potato](Vegetable)?
+      - Tell me about sowing [Potato](Vegetable).
+      - What are the sowing instructions for [Potato](Vegetable)?
+      - When should I sow [Sweet Potato](Vegetable)?
+      - How deep do I plant [Sweet Potato](Vegetable)?
+      - What is the ideal planting time for [Sweet Potato](Vegetable)?
+      - How should I plant [Sweet Potato](Vegetable)?
+      - What's the sowing method for [Sweet Potato](Vegetable)?
+      - What is the sowing time for [Grass Pea](Vegetable)?
+      - How should I sow [Grass Pea](Vegetable)?
+      - What is the ideal planting depth for [Grass Pea](Vegetable)?
+      - Tell me about sowing [Grass Pea](Vegetable).
+      - When should I sow [Chickpea](Vegetable)?
+      - How deep do I plant [Chickpea](Vegetable)?
+      - What spacing should I maintain for [Chickpea](Vegetable)?
+      - What is the sowing process for [Chickpea](Vegetable)?
+      - When is the best time to sow [Felon Lentil](Vegetable)?
+      - How deep should I sow [Felon Lentil](Vegetable)?
+      - What's the ideal sowing method for [Felon Lentil](Vegetable)?
+      - What is the sowing process for [Felon Lentil](Vegetable)?
+      - When should I plant [Pointed Gourd](Vegetable)?
+      - How deep should I sow [Pointed Gourd](Vegetable)?
+      - What's the ideal sowing time for [Pointed Gourd](Vegetable)?
+      - How should I plant [Pointed Gourd](Vegetable)?

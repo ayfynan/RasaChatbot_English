@@ -1,7 +1,7 @@
 version: "3.1"
 
 rules:
-
+#general
   - rule: Say goodbye anytime the user says goodbye
     steps:
       - intent: goodbye
@@ -21,13 +21,12 @@ rules:
       - intent: ask_about_Vegetable
       - action: utter_about_Vegetable
 
-  # Respond to land preparation for Potato
+# Respond to land preparation 
   - rule: Respond to land preparation for potato
     steps:
       - intent: ask_land_preparation_potato
       - action: utter_land_preparation_potato
 
-  # Respond to land preparation for Sweet Potato
   - rule: Respond to land preparation for sweet potato
     steps:
       - intent: ask_land_preparation_sweet_potato
@@ -52,7 +51,7 @@ rules:
     steps:
       - intent: ask_land_preparation_pointed_gourd
       - action: utter_land_preparation_pointed_gourd
-
+#seed plantation
   - rule: Provide information for seed plantation about a vegetable when asked
     condition:
       # This rule is triggered when the vegetable slot is set
@@ -61,3 +60,13 @@ rules:
     steps:
       - intent: ask_about_Vegetable_Seed
       - action: utter_about_Vegetable_Seed
+
+# Sowing plantation rule
+  - rule: Provide information for sowing plantation about a vegetable when asked
+    condition:
+      # This rule is triggered when the vegetable slot is set
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Sowing
+      - action: utter_about_Vegetable_Sowing

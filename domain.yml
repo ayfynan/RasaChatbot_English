@@ -15,6 +15,7 @@ intents:
   - ask_land_preparation_felon_lentil
   - ask_land_preparation_pointed_gourd
   - ask_about_Vegetable_Seed
+  - ask_about_Vegetable_Sowing
 
 entities:
   - Vegetable
@@ -228,6 +229,74 @@ responses:
             - **Spacing**: Maintain 1.5-2 meters between rows and 1 meter between plants within each row to allow sufficient space for the vines to spread.
             - **Support Structure**: Set up bamboo poles, ropes, or nets to create trellises for the climbing vines. This structure improves air circulation, supports the plant, and makes maintenance easier.
 
+#Vegetable Sowing
+  utter_about_Vegetable_Sowing:
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Potato
+    text: |
+      **Sowing Time and Planting for Potato**:
+      - **Sowing Time**: Potato sowing typically begins in late October to early November, depending on weather conditions.
+      - **Planting Depth**: Seeds are sown at a depth of 8-10 cm, maintaining a distance of about 20-30 cm between each tuber in rows that are 60-75 cm apart.
+      - **Irrigation**: After planting, the first irrigation is done immediately to ensure proper seed germination.
+  
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Sweet Potato
+    text: |
+      **Sowing Time and Planting for Sweet Potato**:
+      - **Sowing Time**: The best time to plant sweet potatoes is between February and March (Rabi season) or June to July (Kharif season).
+      - **Spacing**: Maintain a spacing of 75-90 cm between rows and 30-45 cm between plants.
+      - **Planting Depth**: Plant the vine cuttings at a depth of 5-7 cm, ensuring at least one node is above the soil.
+      - **Support Structure**: In flood-prone areas, vines can be grown on trellises or higher beds to avoid waterlogging.
+      - **Irrigation**: Provide the first irrigation immediately after planting.
+
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Grass Pea
+    text: |
+      **Sowing Time and Planting for Grass Pea**:
+      - **Sowing Time**: Grass pea is sown between October and November (Rabi season), taking advantage of residual moisture after the Aman paddy harvest.
+      - **Broadcasting**: Seeds are scattered uniformly over the field.
+      - **Line Sowing**: This method provides better spacing and easier weed control. Maintain row-to-row spacing of 30-35 cm.
+      - **Seed Depth**: Sow seeds 2-3 cm deep to ensure good germination.
+
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Chickpea
+    text: |
+      **Sowing Time and Planting for Chickpea**:
+      - **Sowing Time**: The ideal sowing time is October to November.
+      - **Line Sowing**: Maintain 30-45 cm row spacing for better plant management.
+      - **Seed Depth**: Sow seeds 5-6 cm deep to ensure proper germination.
+      - **Irrigation**: If soil moisture is insufficient, provide light irrigation immediately after sowing to ensure uniform germination.
+
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Felon Lentil
+    text: |
+      **Sowing Time and Planting for Felon Lentil**:
+      - **Sowing Time**: The ideal time to sow lentils is between October and November.
+      - **Line Sowing**: This method is preferred for better spacing and management, maintaining row-to-row spacing of 30-35 cm.
+      - **Seed Depth**: Sow the seeds 2-3 cm deep in moist soil to ensure good germination.
+      - **Irrigation**: Provide the first irrigation immediately if there is insufficient moisture in the soil.
+
+  - condition:
+      - type: slot
+        name: Vegetable
+        value: Pointed Gourd
+    text: |
+      **Sowing Time and Planting for Pointed Gourd**:
+      - **Sowing Time**: The ideal time to sow pointed gourd is between March and April, just before the monsoon season.
+      - **Line Sowing**: This method is preferred for better spacing and management, maintaining row-to-row spacing of 60-75 cm.
+      - **Seed Depth**: Sow the seeds 3-4 cm deep in well-drained, fertile soil for optimal germination.
+      - **Irrigation**: Ensure consistent irrigation, especially during dry spells, but avoid waterlogging as it can damage the roots.
+ 
        
 session_config:
   session_expiration_time: 60
