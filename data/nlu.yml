@@ -144,3 +144,37 @@ nlu:
       - How deep should I sow [Pointed Gourd](Vegetable)?
       - What's the ideal sowing time for [Pointed Gourd](Vegetable)?
       - How should I plant [Pointed Gourd](Vegetable)?
+
+#Vegetable Fertilization
+  - intent: ask_about_Vegetable_Fertilization
+    examples: |
+      - How should I fertilize [Potato](Vegetable)?
+      - What is the fertilization process for [Sweet Potato](Vegetable)?
+      - Can you tell me about fertilizing [Grass Pea](Vegetable)?
+      - How do I apply fertilizer to [Chickpea](Vegetable)?
+      - What fertilizers should I use for [Felon Lentil](Vegetable)?
+      - Tell me about the fertilization process for [Pointed Gourd](Vegetable).
+      - What fertilizers are best for [Potato](Vegetable)?
+      - How should I apply fertilizers to [Sweet Potato](Vegetable)?
+      - What is the fertilization method for [Grass Pea](Vegetable)?
+      - Can you explain the fertilization schedule for [Chickpea](Vegetable)?
+
+# Vegetable_Irrigation
+  - intent: ask_about_Vegetable_Irrigation
+    examples: |
+      - How should I irrigate [Potato](Vegetable)?
+      - What is the irrigation method for [Sweet Potato](Vegetable)?
+      - How often should I irrigate [Chickpea](Vegetable)?
+      - What is the irrigation process for [Felon Lentil](Vegetable)?
+      - Can you tell me about irrigating [Pointed Gourd](Vegetable)?
+      - How should I irrigate [Grass Pea](Vegetable)?
+
+  - intent: ask_about_Vegetable_Growth_Stages_Irrigation
+    examples: |
+      - What is the irrigation schedule for [Potato](Vegetable) during tuber bulking?
+      - Tell me about the irrigation during the growth stages of [Sweet Potato](Vegetable).
+      - What are the Critical Growth Stages for Irrigation of [Pointed Gourd](Vegetable)?
+      - How should I irrigate [Sweet Potato](Vegetable) during tuber initiation?
+      - What is the irrigation requirement for [Grass Pea](Vegetable) during flowering?
+      - How often should I irrigate [Felon Lentil](Vegetable) during pod development?
+      - What is the irrigation timeline for [Chickpea](Vegetable)?

@@ -16,6 +16,9 @@ intents:
   - ask_land_preparation_pointed_gourd
   - ask_about_Vegetable_Seed
   - ask_about_Vegetable_Sowing
+  - ask_about_Vegetable_Fertilization
+  - ask_about_Vegetable_Irrigation
+  - ask_about_Vegetable_Growth_Stages_Irrigation
 
 entities:
   - Vegetable
@@ -40,9 +43,13 @@ actions:
   - utter_land_preparation_pointed_gourd
   - utter_about_Vegetable_Seed
   - utter_about_Vegetable_Sowing
+  - utter_about_Vegetable_Fertilization
+  - utter_about_Vegetable_Irrigation
+  - utter_about_Vegetable_Growth_Stages_Irrigation
 
 
 responses:
+#general
   utter_greet:
     - text: "Hey! How are you?"
 
@@ -58,7 +65,7 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." #customize it
 
-  # Responses for Vegetable information
+# Responses for Vegetable information
   utter_about_Vegetable:
     - condition:
         - type: slot
@@ -102,7 +109,7 @@ responses:
   utter_about_sweet_potato:
     - text: "Sweet potato (Ipomoea batatas) is a widely cultivated crop in Bangladesh due to its adaptability to various soil types and tolerance to drought. It is valued for its nutritional benefits and economic importance."
 
-  # Response for land preparation 
+# Response for land preparation 
   utter_land_preparation_potato:
     - text: |
         **Land Selection and Preparation for Potato**:
@@ -297,6 +304,228 @@ responses:
       - **Seed Depth**: Sow the seeds 3-4 cm deep in well-drained, fertile soil for optimal germination.
       - **Irrigation**: Ensure consistent irrigation, especially during dry spells, but avoid waterlogging as it can damage the roots.
  
+#Vegetable Fertilization
+  # Vegetable Fertilization
+  utter_about_Vegetable_Fertilization:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Fertilization for Potato**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 50 kg
+          - Triple Super Phosphate (TSP): 50 kg
+          - Muriate of Potash (MoP): 40-50 kg
+          - Gypsum: 10-15 kg
+        - **Top Dressing**:
+          - First application of urea (40 kg) and MoP (20 kg) at 25-30 days after planting.
+          - Second top dressing (30 kg of urea) at the flowering stage.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Fertilization for Sweet Potato**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 40-50 kg
+          - Triple Super Phosphate (TSP): 30-40 kg
+          - Muriate of Potash (MoP): 25-30 kg
+        - **Top Dressing**:
+          - Apply 20-30 kg of urea per acre at 25-30 days after planting to encourage vegetative growth.
+          - Use organic fertilizers (like compost) regularly to maintain soil health.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Fertilization for Grass Pea**:
+        - **Basal Fertilizers (Before Sowing)**:
+          - Urea: 10-15 kg per acre (for early growth).
+          - Triple Super Phosphate (TSP): 20-25 kg per acre.
+          - Muriate of Potash (MoP): 10-12 kg per acre.
+        - **Organic Fertilizers**:
+          - Incorporate organic manure (like decomposed cow dung) to maintain soil health and long-term fertility.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Fertilization for Chickpea**:
+        - **Basal Fertilizers (Before Sowing)**:
+          - Urea: 15-20 kg
+          - Triple Super Phosphate (TSP): 20-25 kg
+          - Muriate of Potash (MoP): 10-12 kg
+        - **Organic Fertilizers**:
+          - Supplement with compost or farmyard manure to maintain soil health.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Fertilization for Felon Lentil**:
+        - **Basal Fertilizers (Before Sowing)**:
+          - Urea: 10-15 kg per acre.
+          - Triple Super Phosphate (TSP): 20-25 kg per acre.
+          - Muriate of Potash (MoP): 10-12 kg per acre.
+        - **Organic Fertilizers**:
+          - Incorporate organic compost to improve soil health and retain moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Fertilization for Pointed Gourd**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 30-40 kg per acre
+          - Triple Super Phosphate (TSP): 40-50 kg per acre
+          - Muriate of Potash (MoP): 20-25 kg per acre
+        - **Top Dressing**:
+          - Apply 30-35 kg of urea 25-30 days after planting to promote vegetative growth.
+        - **Organic Fertilizers**:
+          - Incorporate organic manure regularly to maintain long-term soil fertility.
+
+# Irrigation Schedule for Vegetables
+  utter_about_Vegetable_Irrigation:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Irrigation for Potato**:
+        - Potatoes typically require 2-4 irrigations throughout the growing period, depending on the rainfall and soil moisture content.
+        - In well-drained soils, more frequent but lighter irrigations may be required.
+        - If irrigation systems like drip or sprinkler irrigation are used, the water efficiency can be improved, and the total water requirement may be slightly lower.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Irrigation for Sweet Potato**:
+        - Sweet potatoes require consistent moisture, especially during key growth stages.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper root establishment.
+        - **Subsequent Irrigations**: Water the crop every 7-10 days depending on soil moisture conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Irrigation for Grass Pea**:
+        - Grass pea is a drought-tolerant crop, but timely irrigation improves yields.
+        - **First Irrigation**: If the soil is dry, irrigate the field immediately after sowing to ensure uniform germination.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Irrigation for Chickpea**:
+        - Chickpeas are drought-tolerant but need adequate moisture during key growth stages.
+        - **First Irrigation**: Provide irrigation immediately after sowing if rainfall is insufficient.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Irrigation for Felon Lentil**:
+        - Felon lentil requires minimal irrigation but needs moisture during critical stages.
+        - **First Irrigation**: Provide the first irrigation immediately after sowing to support germination if soil moisture is low.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Irrigation for Pointed Gourd**:
+        - Pointed gourd requires consistent moisture throughout its growth cycle, especially during fruit setting.
+        - **First Irrigation**: Provide the first irrigation immediately after planting.
+        - **Subsequent Irrigations**: Water the field every 7-10 days, depending on soil moisture and weather conditions.
+        
+# Growth stages irrigation for Potato, Sweet Potato, Grass Pea, Chickpea, Felon Lentil, and Pointed Gourd
+  utter_about_Vegetable_Growth_Stages_Irrigation:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Growth Stages Irrigation for Potato**:
+        - **Germination Stage** (Immediately after planting):
+          - Water Requirement: 40-60 mm per hectare
+        - **Tuber Initiation** (30-40 days after planting):
+          - Water Requirement: 70-100 mm per hectare
+        - **Tuber Bulking** (60-90 days after planting):
+          - Water Requirement: 80-120 mm per hectare
+        - **Maturity** (90-120 days after planting):
+          - Water Requirement: 40-60 mm per hectare
+  
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Growth Stages Irrigation for Sweet Potato**:
+        - **Vegetative Growth** (15-30 days after planting):
+          - Irrigation promotes vine development.
+        - **Tuber Initiation** (45-60 days after planting):
+          - Ensure adequate moisture to support tuber formation.
+        - **Tuber Bulking** (60-90 days after planting):
+          - Regular irrigation to increase tuber size and quality. Avoid over-irrigation to prevent root rot.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Growth Stages Irrigation for Grass Pea**:
+        - **Flowering Stage** (35-45 days after planting):
+          - Adequate moisture is essential to support flowering.
+        - **Pod Development** (55-65 days after planting):
+          - Moisture is necessary to ensure proper pod filling.
+        - **Irrigation Frequency**: Depending on soil moisture, 1-2 irrigations may be needed during the crop cycle. Avoid over-irrigation.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Growth Stages Irrigation for Chickpea**:
+        - **Flowering Stage** (35-45 days after planting):
+          - Ensure proper flower development.
+        - **Pod Formation Stage** (55-65 days after planting):
+          - Adequate moisture supports pod filling and seed development.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Growth Stages Irrigation for Felon Lentil**:
+        - **Flowering Stage** (30-40 days after planting):
+          - Adequate moisture supports flower development.
+        - **Pod Development Stage** (50-60 days after planting):
+          - Ensures proper pod filling and higher seed yield.
+        - **Irrigation Frequency**: One or two irrigations may be required depending on rainfall and soil moisture. Avoid waterlogging.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Growth Stages Irrigation for Pointed Gourd**:
+        - **Flowering and Fruit Setting Stage**:
+          - Ensure adequate moisture for fruit development.
+        - **Tuber Growth in Rooted Plants**:
+          - Maintain regular moisture without waterlogging.
+        
+
        
 session_config:
   session_expiration_time: 60

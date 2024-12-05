@@ -70,3 +70,30 @@ rules:
     steps:
       - intent: ask_about_Vegetable_Sowing
       - action: utter_about_Vegetable_Sowing
+
+#Fertilization
+  - rule: Provide information for fertilization about a vegetable when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Fertilization
+      - action: utter_about_Vegetable_Fertilization
+
+#Irrigation
+  - rule: Provide irrigation information about a vegetable when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Irrigation
+      - action: utter_about_Vegetable_Irrigation      
+
+# Irrigation growth stages
+  - rule: Provide information about growth stages irrigation for a vegetable when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Growth_Stages_Irrigation
+      - action: utter_about_Vegetable_Growth_Stages_Irrigation
