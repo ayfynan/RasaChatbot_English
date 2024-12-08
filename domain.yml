@@ -19,9 +19,18 @@ intents:
   - ask_about_Vegetable_Fertilization
   - ask_about_Vegetable_Irrigation
   - ask_about_Vegetable_Growth_Stages_Irrigation
+  - ask_about_Vegetable_Weed_Management
+  - ask_about_Vegetable_Pests
+  - ask_about_Vegetable_Diseases
+  - ask_about_Aphids_Potato
+  - ask_about_Vegetable_Harvesting
+  - ask_about_Vegetable_Yield
+  - ask_about_Vegetable_Benefits
 
 entities:
   - Vegetable
+  - Pest
+  - Disease
 
 slots:
   Vegetable:
@@ -30,6 +39,20 @@ slots:
     mappings:
       - type: from_entity
         entity: Vegetable
+
+  Pest:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: Pest
+
+  Disease:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: Disease     
 
 actions:
   - utter_about_Vegetable
@@ -46,12 +69,19 @@ actions:
   - utter_about_Vegetable_Fertilization
   - utter_about_Vegetable_Irrigation
   - utter_about_Vegetable_Growth_Stages_Irrigation
+  - utter_about_Vegetable_Weed_Management
+  - utter_about_Vegetable_Pests
+  - utter_about_Vegetable_Diseases
+  - utter_about_Aphids_Potato
+  - utter_about_Vegetable_Harvesting
+  - utter_about_Vegetable_Yield
+  - utter_about_Vegetable_Benefits
 
 
 responses:
 #general
   utter_greet:
-    - text: "Hey! How are you?"
+    - text: "Hello! How can i assist you with any queries regarding vegetables and farming today?"
 
   utter_did_that_help:
     - text: "Did that help you?"
@@ -448,7 +478,7 @@ responses:
         - Pointed gourd requires consistent moisture throughout its growth cycle, especially during fruit setting.
         - **First Irrigation**: Provide the first irrigation immediately after planting.
         - **Subsequent Irrigations**: Water the field every 7-10 days, depending on soil moisture and weather conditions.
-        
+
 # Growth stages irrigation for Potato, Sweet Potato, Grass Pea, Chickpea, Felon Lentil, and Pointed Gourd
   utter_about_Vegetable_Growth_Stages_Irrigation:
     - condition:
@@ -525,8 +555,515 @@ responses:
         - **Tuber Growth in Rooted Plants**:
           - Maintain regular moisture without waterlogging.
         
+# Weed Management
+  utter_about_Vegetable_Weed_Management:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Weed Management for Potato**:
+        - **Manual Weeding**: Perform the first weeding 15-20 days after planting, followed by another at 40-45 days.  
+        - **Mulching**: Use organic mulches like straw to retain soil moisture and suppress weeds.
 
-       
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Weed Management for Sweet Potato**:
+        - **Manual Weeding**: Perform the first weeding 15-20 days after planting, followed by another 40-45 days later. 
+        - **Mulching**: Apply organic mulches like straw to suppress weed growth and retain soil moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Weed Management for Grass Pea**:
+        - **Manual Weeding**: Perform the first weeding 20-25 days after sowing to reduce competition. If needed, conduct a second weeding 45-50 days after sowing.
+        - **Mulching**: Organic mulches (like straw) can be used to suppress weed growth and retain soil moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Weed Management for Chickpea**:
+        - **Manual Weeding**: Perform the first weeding 20-25 days after sowing. A second weeding may be required 40-45 days after sowing.
+        - **Mulching**: Apply organic mulches like straw to retain soil moisture and suppress weed growth.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Weed Management for Felon Lentil**:
+        - **Manual Weeding**: Perform the first weeding 20-25 days after sowing. Conduct a second weeding around 40-45 days after sowing, if necessary.
+        - **Mulching**: Organic mulching helps retain soil moisture and suppress weed growth.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Weed Management for Pointed Gourd**:
+        - **Manual Weeding**: Perform the first weeding 15-20 days after planting. Conduct subsequent weeding every 20-30 days as needed.
+        - **Mulching**: Use organic mulches like straw or dry leaves to suppress weeds and retain soil moisture.
+
+
+#Vegetable pest for all vegetables
+  utter_about_Vegetable_Pests:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Pest Management for Potato**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Every 5-7 days, covering leaf undersides.
+        - **Potato Tuber Moth**:
+          - Control: Handpick caterpillars or use Bt spray.
+          - Quantity: 1-2 pints of Bt concentrate in water solution.
+          - Frequency: Every 7-10 days, or after rain, focusing on feeding areas.
+        - **Colorado Potato Beetle**:
+          - Control: Handpick, neem oil, or Bt spray.
+          - Quantity: 1-2 quarts of Neem Oil, 1-2 pints of Bt.
+          - Frequency: Apply as needed, every 7-10 days.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Pest Management for Sweet Potato**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 5-7 days, covering leaf undersides.
+        - **Sweet Potato Weevil**:
+          - Control: Crop rotation, neem oil spray.
+          - Quantity: 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 7-10 days, especially during peak weevil activity.
+        - **Flea Beetles**:
+          - Control: Insecticidal soap or neem oil; row covers for young plants.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Reapply every 5-7 days, especially after rain.
+        - **Whiteflies**:
+          - Control: Yellow sticky traps, insecticidal soap, or neem oil.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Reapply every 5-7 days as needed.
+
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Pest Management for Grass Pea**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 5-7 days, covering leaf undersides.
+        - **Grasshopper**:
+          - Control: Neem oil spray, handpick if possible.
+          - Quantity: 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 7-10 days.
+        - **Pod Borer**:
+          - Control: Bt spray.
+          - Quantity: 1-2 pints of Bt concentrate in water solution.
+          - Frequency: Reapply every 1-2 weeks, especially after rain.
+
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Pest Management for Chickpea**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 5-7 days, covering leaf undersides.
+        - **Pod Borer**:
+          - Control: Bt spray.
+          - Quantity: 1-2 pints of Bt concentrate in water solution.
+          - Frequency: Reapply every 1-2 weeks, especially after rain.
+
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Pest Management for Felon Lentil**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 5-7 days, covering leaf undersides.
+        - **Cutworms**:
+          - Control: Beneficial nematodes, remove plant debris.
+          - Quantity: Beneficial Nematodes as directed by manufacturer.
+          - Frequency: Apply once early in the season or as needed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Pest Management for Pointed Gourd**:
+        - **Aphids**:
+          - Control: Insecticidal soap or neem oil spray.
+          - Quantity: 2-4 quarts of Insecticidal Soap, 1-2 quarts of Neem Oil.
+          - Frequency: Apply every 5-7 days, covering leaf undersides.
+        - **Cutworms**:
+          - Control: Beneficial nematodes, remove plant debris.
+          - Quantity: Beneficial Nematodes as directed by manufacturer.
+          - Frequency: Apply once early in the season or as needed.
+
+
+  utter_about_Vegetable_Diseases:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Disease Management for Potato**:
+        - **Late Blight**:
+          - Control: Copper fungicide, remove infected plants.
+          - Frequency: Weekly during humid or wet periods.
+        - **Early Blight**:
+          - Control: Baking soda solution, remove infected leaves.
+          - Frequency: Weekly, especially in early stages.
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly during dry conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Disease Management for Sweet Potato**:
+        - **Fusarium Wilt**:
+          - Control: Plant resistant varieties, improve soil drainage.
+          - Frequency: Improve drainage, avoid over-watering.
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly, especially during humid conditions.
+        - **Alternaria Leaf Spot**:
+          - Control: Neem oil or copper fungicide spray.
+          - Frequency: Apply every 7-10 days as needed, especially in wet conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Disease Management for Grass Pea**:
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly during humid conditions.
+        - **Alternaria Leaf Spot**:
+          - Control: Copper fungicide spray.
+          - Frequency: Every 7-10 days as needed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Disease Management for Chickpea**:
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly, especially during humid conditions.
+        - **Alternaria Leaf Spot**:
+          - Control: Copper fungicide spray.
+          - Frequency: Apply every 7-10 days as needed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Disease Management for Felon Lentil**:
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly during humid conditions.
+        - **Alternaria Leaf Spot**:
+          - Control: Copper fungicide spray.
+          - Frequency: Apply every 7-10 days as needed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Disease Management for Pointed Gourd**:
+        - **Powdery Mildew**:
+          - Control: Neem oil or baking soda solution.
+          - Frequency: Weekly during humid conditions.
+        - **Alternaria Leaf Spot**:
+          - Control: Copper fungicide spray.
+          - Frequency: Apply every 7-10 days as needed.
+# Pest management for Aphids on Potato
+  utter_about_Aphids_Potato:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Aphids on Potato:**
+        - **Control/Prevention**: Insecticidal soap or neem oil spray.
+        - **Quantity per Acre**: 
+          - Insecticidal Soap: 2-4 quarts of solution
+          - Neem Oil: 1-2 quarts of solution
+        - **Application Frequency**: Every 5-7 days, ensuring coverage on leaf undersides.
+        - **Tip**: Ensure thorough coverage, especially on the undersides of the leaves where aphids tend to gather.
+
+# General response for harvesting and post-harvest handling for any vegetable
+  utter_about_Vegetable_Harvesting:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Harvesting for Potato**:
+        - **Harvesting Time**: 90-120 days after planting.
+        - **Signs of Maturity**:
+          - Leaves turn yellow and begin to wither.
+          - Skins of the tubers harden and do not peel off easily.
+        - **Harvesting Method**:
+          - Use hand tools or mechanical harvesters to dig up the tubers carefully.
+          - Let tubers dry in the shade for 2-3 days to toughen the skins.
+
+        **Post-Harvest Handling for Potato**:
+        - **Sorting**: Sort potatoes based on size, shape, and quality.
+        - **Storage**: Store in a cool, well-ventilated place.
+        - **Temperature Control**: Ideal storage temperature is 4-10°C.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Harvesting for Sweet Potato**:
+        - **Harvesting Time**: 90-120 days after planting.
+        - **Signs of Maturity**:
+          - Leaves begin to yellow and dry.
+          - Tubers have reached optimal size and firmness.
+        - **Harvesting Method**:
+          - Carefully dig up tubers with a spade or hoe.
+          - Let tubers dry in the field for a few hours before transport.
+
+        **Post-Harvest Handling for Sweet Potato**:
+        - **Sorting**: Sort tubers based on size, shape, and quality.
+        - **Curing**: Cure tubers at 25-30°C for 5-7 days.
+        - **Storage**: Store at 12-15°C to prevent sprouting.
+        - **Packaging**: Pack in crates to avoid bruising.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Harvesting for Grass Pea**:
+        - **Harvesting Time**: 90-120 days after sowing.
+        - **Signs of Maturity**:
+          - Leaves turn yellow and pods become dry.
+          - Seeds inside the pods harden and change color.
+        - **Harvesting Method**:
+          - Cut the plants when 80-85% of the pods have matured.
+          - Let the plants dry in the field for 2-3 days before threshing.
+
+        **Post-Harvest Handling for Grass Pea**:
+        - **Threshing**: Separate seeds from pods using mechanical or manual methods.
+        - **Cleaning**: Remove broken or damaged seeds.
+        - **Storage**: Store seeds in airtight containers.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Harvesting for Chickpea**:
+        - **Harvesting Time**: 90-120 days after sowing.
+        - **Signs of Maturity**:
+          - Leaves turn yellow and pods dry out.
+          - Seeds inside the pods harden and change color.
+        - **Harvesting Method**:
+          - Cut plants when 80-90% of pods are mature.
+          - Let the plants dry in the field for 2-3 days before threshing.
+
+        **Post-Harvest Handling for Chickpea**:
+        - **Threshing**: Separate seeds from pods using mechanical or manual threshing.
+        - **Cleaning**: Clean seeds and sort by size and quality.
+        - **Storage**: Store in airtight containers.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Harvesting for Felon Lentil**:
+        - **Harvesting Time**: 90-110 days after sowing.
+        - **Signs of Maturity**:
+          - Leaves turn yellow and pods dry out.
+          - Seeds inside the pods harden and change color.
+        - **Harvesting Method**:
+          - Cut the plants when 80-85% of the pods are mature.
+          - Let plants dry in the field for 2-3 days.
+
+        **Post-Harvest Handling for Felon Lentil**:
+        - **Threshing**: Separate seeds from pods using mechanical or manual threshing.
+        - **Cleaning**: Clean and sort seeds.
+        - **Drying**: Ensure moisture content is 8-10% before storage.
+        - **Storage**: Store in airtight containers.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Harvesting for Pointed Gourd**:
+        - **Harvesting Time**: 75-90 days after planting.
+        - **Harvesting Frequency**: Harvest every 2-3 days.
+        - **Signs of Maturity**:
+          - Fruits should be tender and green.
+          - Over-mature fruits become fibrous and lose quality.
+
+        **Post-Harvest Handling for Pointed Gourd**:
+        - **Sorting**: Sort fruits based on size and quality.
+        - **Packaging**: Pack in bamboo baskets or crates.
+        - **Storage**: Store in a cool, shaded place for 2-3 days.
+
+
+# General response for yield and profitability for any vegetable
+  utter_about_Vegetable_Yield:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Yield and Profitability for Potato**:
+        - **Yield**: 8-10 tons per acre.
+        - **Cost of Production**: BDT 40,000-60,000 per acre (includes land preparation, seeds, fertilizers, irrigation, labor, and plant protection).
+        - **Market Value**: BDT 10-15 per kg; revenue can range from BDT 80,000-150,000 per acre.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Yield and Profitability for Sweet Potato**:
+        - **Yield**: 10-12 tons per acre.
+        - **Cost of Production**: BDT 30,000-45,000 per acre (includes land preparation, vine cuttings, fertilizers, labor, and irrigation).
+        - **Market Value**: BDT 15-20 per kg; revenue can range from BDT 150,000-240,000 per acre.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Yield and Profitability for Grass Pea**:
+        - **Yield**: 600-800 kg per acre.
+        - **Cost of Production**: BDT 15,000-20,000 per acre (includes land preparation, seeds, fertilizers, irrigation, labor, and pest management).
+        - **Market Value**: BDT 50-70 per kg; revenue can range from BDT 30,000-56,000 per acre.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Yield and Profitability for Chickpea**:
+        - **Yield**: 600-800 kg per acre.
+        - **Cost of Production**: BDT 15,000-20,000 per acre (includes land preparation, seeds, fertilizers, irrigation, labor, and plant protection).
+        - **Market Value**: BDT 50-70 per kg; revenue can range from BDT 30,000-56,000 per acre.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Yield and Profitability for Felon Lentil**:
+        - **Yield**: 500-700 kg per acre.
+        - **Cost of Production**: BDT 15,000-20,000 per acre (includes land preparation, seeds, fertilizers, labor, and irrigation).
+        - **Market Value**: BDT 70-100 per kg; revenue can range from BDT 35,000-70,000 per acre.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Yield and Profitability for Pointed Gourd**:
+        - **Yield**: 8-10 tons per acre.
+        - **Cost of Production**: BDT 30,000-45,000 per acre (includes land preparation, planting materials, fertilizers, labor, and pest management).
+        - **Market Value**: BDT 20-30 per kg; revenue can range from BDT 160,000-300,000 per acre.
+
+
+# General response for benefits of cultivation for any vegetable
+  utter_about_Vegetable_Benefits:
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Potato
+      text: |
+        **Benefits of Potato Cultivation**:
+        - **Drought Tolerance**: Potatoes thrive in a range of conditions, though they require adequate moisture for good yield.
+        - **Soil Fertility Improvement**: Potatoes do not fix nitrogen, but they improve soil structure and quality through their root systems.
+        - **Economic Importance**: Potatoes are a staple food crop with a wide market demand globally.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Sweet Potato
+      text: |
+        **Benefits of Sweet Potato Cultivation**:
+        - **Drought Tolerance**: Sweet potatoes are resilient to drought conditions, making them suitable for low-water regions.
+        - **Soil Fertility Improvement**: As a vine crop, sweet potatoes do not fix nitrogen but can be grown in rotations to help improve soil health.
+        - **Economic Importance**: Sweet potatoes are widely consumed for their nutritional value and high market demand.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Grass Pea
+      text: |
+        **Benefits of Grass Pea Cultivation**:
+        - **Drought Tolerance**: Grass pea thrives in areas with low water availability, making it suitable for marginal lands.
+        - **Soil Fertility Improvement**: As a legume, grass pea fixes nitrogen in the soil, improving fertility for future crops.
+        - **Economic Importance**: Grass pea has high demand in local markets as a food source and animal feed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Chickpea
+      text: |
+        **Benefits of Chickpea Cultivation**:
+        - **Drought Tolerance**: Chickpeas perform well in areas with minimal water, making them ideal for rainfed regions.
+        - **Soil Fertility Improvement**: Chickpeas fix nitrogen, enriching soil fertility for future crops.
+        - **Economic Importance**: Chickpeas are in high demand in local and export markets due to their nutritional value.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Felon Lentil
+      text: |
+        **Benefits of Felon Lentil Cultivation**:
+        - **Drought Tolerance**: Lentils thrive in dry conditions and require minimal water.
+        - **Soil Fertility Improvement**: Lentils fix nitrogen in the soil, which improves the fertility for the next crops.
+        - **Economic Importance**: Lentils are a valuable cash crop with strong demand in both local and international markets.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Pointed Gourd
+      text: |
+        **Benefits of Pointed Gourd Cultivation**:
+        - **High Market Demand**: Pointed gourd is widely consumed, making it a profitable crop.
+        - **Perennial Crop**: With proper care, pointed gourd vines can produce for 3-4 years.
+        - **Soil Health Improvement**: Pointed gourd requires minimal chemical inputs, making it a sustainable crop for long-term cultivation.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

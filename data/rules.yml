@@ -97,3 +97,69 @@ rules:
     steps:
       - intent: ask_about_Vegetable_Growth_Stages_Irrigation
       - action: utter_about_Vegetable_Growth_Stages_Irrigation
+
+#Weed managment
+  - rule: Provide information about weed managment for a vegetable when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Weed_Management
+      - action: utter_about_Vegetable_Weed_Management
+
+#General Pest management
+  - rule: Provide pest management information when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Pests
+      - action: utter_about_Vegetable_Pests
+
+
+#General Disease Managment
+  - rule: Provide disease management information when asked
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Diseases
+      - action: utter_about_Vegetable_Diseases
+
+#Aphids
+  - rule: Provide pest management information for Aphids on Potato
+    condition:
+      - slot_was_set:
+          - Vegetable
+          - Pest
+    steps:
+      - intent: ask_about_Aphids_Potato
+      - action: utter_about_Aphids_Potato
+
+#Harvest
+  - rule: Provide harvesting information for a vegetable
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Harvesting
+      - action: utter_about_Vegetable_Harvesting
+
+#Yeild and probablity
+  - rule: Provide yield and profitability information for a vegetable
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Yield
+      - action: utter_about_Vegetable_Yield
+
+#Bebefits
+
+  - rule: Provide benefits of cultivation for a vegetable
+    condition:
+      - slot_was_set:
+          - Vegetable
+    steps:
+      - intent: ask_about_Vegetable_Benefits
+      - action: utter_about_Vegetable_Benefits

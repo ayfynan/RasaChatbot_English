@@ -178,3 +178,86 @@ nlu:
       - What is the irrigation requirement for [Grass Pea](Vegetable) during flowering?
       - How often should I irrigate [Felon Lentil](Vegetable) during pod development?
       - What is the irrigation timeline for [Chickpea](Vegetable)?
+
+  - intent: ask_about_Vegetable_Weed_Management
+    examples: |
+      - How should I manage weeds in [Potato](Vegetable)?
+      - What is the weed control method for [Sweet Potato](Vegetable)?
+      - Can you tell me about weed management for [Grass Pea](Vegetable)?
+      - How do I control weeds in [Chickpea](Vegetable)?
+      - What is the weed management strategy for [Felon Lentil](Vegetable)?
+      - Tell me how to manage weeds in [Pointed Gourd](Vegetable).
+      - How do I get rid of weeds in [Potato](Vegetable)?
+      - What are the best practices for weed management in [Sweet Potato](Vegetable)?
+      - Can you explain how to manage weeds in [Grass Pea](Vegetable)?
+      - How should I handle weed control in [Chickpea](Vegetable)?
+      - What weed control methods work best for [Felon Lentil](Vegetable)?
+      - How often should I weed [Pointed Gourd](Vegetable)?
+#Pests and Diseases
+  - intent: ask_about_Vegetable_Pests 
+    examples: |
+      - How should I manage pests in [Potato](Vegetable)?
+      - What is the pest control method for [Sweet Potato](Vegetable)?
+      - Can you tell me about pest management for [Grass Pea](Vegetable)?
+      - How do I control pests in [Chickpea](Vegetable)?
+      - What is the pest management strategy for [Felon Lentil](Vegetable)?
+      - Tell me how to manage pests in [Pointed Gourd](Vegetable).
+      - How do I get rid of pests in [Potato](Vegetable)?
+      - What are the best practices for pest management in [Sweet Potato](Vegetable)?
+
+  - intent: ask_about_Vegetable_Diseases 
+    examples: |
+      - How should I manage diseases in [Potato](Vegetable)?
+      - What is the disease control method for [Sweet Potato](Vegetable)?
+      - Can you tell me about disease management for [Grass Pea](Vegetable)?
+      - How do I control diseases in [Chickpea](Vegetable)?
+      - What is the disease management strategy for [Felon Lentil](Vegetable)?
+      - Tell me how to manage diseases in [Pointed Gourd](Vegetable).
+      - How do I get rid of diseases in [Potato](Vegetable)?
+      - What are the best practices for disease management in [Sweet Potato](Vegetable)?
+
+# Intent for asking about Aphids on Potato
+  - intent: ask_about_Aphids_Potato
+    examples: |
+      - What is the control method for Aphids on [Potato](Vegetable)?
+      - How do I get rid of Aphids on [Potato](Vegetable)?
+      - Tell me about managing Aphids in [Potato](Vegetable).
+      - How can I treat Aphids on [Potato](Vegetable)?
+      - What pesticides should I use for Aphids on [Potato](Vegetable)?
+      - How often should I spray for Aphids on [Potato](Vegetable)?
+
+# Intent for asking about harvesting information for vegetables
+  - intent: ask_about_Vegetable_Harvesting
+    examples: |
+      - When should I harvest [Potato](Vegetable)?
+      - How do I harvest [Sweet Potato](Vegetable)?
+      - Tell me about the harvest time for [Grass Pea](Vegetable).
+      - What is the harvesting method for [Chickpea](Vegetable)?
+      - How do I harvest [Felon Lentil](Vegetable)?
+      - When should I start harvesting [Pointed Gourd](Vegetable)?
+
+
+# Intent for asking about yield and profitability for vegetables
+  - intent: ask_about_Vegetable_Yield
+    examples: |
+      - What is the yield for [Potato](Vegetable)?
+      - Tell me about yield and profitability for [Sweet Potato](Vegetable).
+      - How much can I earn from [Grass Pea](Vegetable)?
+      - What is the market value for [Chickpea](Vegetable)?
+      - What is the production cost for [Felon Lentil](Vegetable)?
+      - How much yield can I expect from [Pointed Gourd](Vegetable)?
+      - How much profit can I make from [Potato](Vegetable)?
+
+# Intent for asking about the benefits of various vegetables
+  - intent: ask_about_Vegetable_Benefits
+    examples: |
+      - What are the benefits of cultivating [Potato](Vegetable)?
+      - Tell me about the benefits of growing [Sweet Potato](Vegetable).
+      - Why should I grow [Grass Pea](Vegetable)?
+      - What are the benefits of planting [Chickpea](Vegetable)?
+      - Can you tell me about the advantages of cultivating [Felon Lentil](Vegetable)?
+      - What are the benefits of planting [Pointed Gourd](Vegetable)?
+      - How does growing [Potato](Vegetable) help the soil?
+      - What makes [Sweet Potato](Vegetable) a good crop to grow?
+      - Why is [Grass Pea](Vegetable) beneficial for the soil?
+      - What is the economic importance of [Chickpea](Vegetable)?
