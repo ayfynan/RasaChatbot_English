@@ -36,10 +36,17 @@ nlu:
       - am I talking to a bot?
       - am I talking to a human?
 
+#Plantation process Potato
+  - intent: ask_plantation_process_potato  
+    examples: | 
+      - Describe the entire planting process for [Potato](Vegetable)?
+      - What are the steps involved in planting potatoes?
+
+
+
 #Vegetable intro
   - intent: ask_about_Vegetable
     examples: |
-      - What is [Malabar spinach](Vegetable)?
       - Explain what is [Potato](Vegetable).
       - What can you tell me about [Sweet Potato](Vegetable), not just any other potato?
       - What distinguishes a [Sweet Potato](Vegetable) from other types?
@@ -48,6 +55,12 @@ nlu:
       - I need information on [Chickpea](Vegetable).
       - Tell me more about [Felon Lentil](Vegetable).
       - What is [Pointed Gourd](Vegetable)?
+      - What is [Malabar spinach](Vegetable)?
+      - I need information on [Jute](Vegetable).
+      - Tell me more about [Corn](Vegetable).
+      - What is [Broccoli](Vegetable)?
+      - Can you provide details about [Mustard](Vegetable)? 
+
 
 # Vegetable land preparation information intents
   - intent: ask_land_preparation_potato
@@ -91,7 +104,43 @@ nlu:
       - What is the best soil for pointed gourd?
       - How do you prepare land for growing pointed gourd?
 
-#VEGGIE SEED
+  - intent: ask_land_preparation_malabar_spinach
+    examples: |
+      - Tell me about land preparation for Malabar Spinach
+      - How do you prepare the land for Malabar Spinach?
+      - What is the best soil for Malabar Spinach?
+      - How do you prepare land for growing Malabar Spinach?
+
+  - intent: ask_land_preparation_jute
+    examples: |
+      - Tell me about land preparation for Jute
+      - How do you prepare the land for Jute?
+      - What is the best soil for Jute?
+      - How do you prepare land for growing Jute?
+
+  - intent: ask_land_preparation_corn
+    examples: |
+      - Tell me about land preparation for Corn
+      - How do you prepare the land for Corn?
+      - What is the best soil for Corn?
+      - How do you prepare land for growing Corn?
+
+  - intent: ask_land_preparation_broccoli
+    examples: |
+      - Tell me about land preparation for Broccoli
+      - How do you prepare the land for Broccoli?
+      - What is the best soil for Broccoli?
+      - How do you prepare land for growing Broccoli?
+
+  - intent: ask_land_preparation_mustard
+    examples: |
+      - Tell me about land preparation for Mustard
+      - How do you prepare the land for Mustard?
+      - What is the best soil for Mustard?
+      - How do you prepare land for growing Mustard?
+
+
+#SEED plantation
   - intent: ask_about_Vegetable_Seed
     examples: |
       - How do I prepare seed for [Potato](Vegetable)?
@@ -114,6 +163,20 @@ nlu:
       - Can you guide me on how to prepare seeds or vines for [Pointed Gourd](Vegetable)?
       - How should I plant [Pointed Gourd](Vegetable) cuttings?
       - What should I know about preparing [Pointed Gourd](Vegetable) seeds or cuttings?
+      - Tell me about [Malabar Spinach](Vegetable) seed preparation.
+      - What can I do to prepare seed for [Malabar Spinach](Vegetable)?
+      - How do I select seeds for [Corn](Vegetable)?
+      - What is the process for preparing seeds of [Corn](Vegetable)?
+      - How should I treat seeds for [Corn](Vegetable)?
+      - Can you tell me about [Jute](Vegetable) seed preparation?
+      - What is the seed treatment process for [Jute](Vegetable)?
+      - How do I prepare seeds for [Jute](Vegetable)?
+      - What are the best practices for seed preparation for [Mustard](Vegetable)?
+      - How should I select seeds for [Mustard](Vegetable)?
+      - Tell me about seed preparation for [Broccoli](Vegetable).
+      - What steps should I follow to prepare seeds of [Broccoli](Vegetable)?
+
+
 
 # Vegetable sowing
   - intent: ask_about_Vegetable_Sowing
@@ -144,6 +207,27 @@ nlu:
       - How deep should I sow [Pointed Gourd](Vegetable)?
       - What's the ideal sowing time for [Pointed Gourd](Vegetable)?
       - How should I plant [Pointed Gourd](Vegetable)?
+      - What is the ideal planting depth for [Malabar Spinach](Vegetable)?
+      - Tell me about sowing [Malabar Spinach](Vegetable).
+      - How deep do I plant [Malabar Spinach](Vegetable)?
+      - What spacing should I maintain for [Malabar Spinach](Vegetable)?
+      - When is the best time to sow [Corn](Vegetable)?
+      - How deep should I sow [Corn](Vegetable)?
+      - What's the ideal sowing method for [Corn](Vegetable)?
+      - What is the sowing process for [Corn](Vegetable)?
+      - When should I plant [Jute](Vegetable)?
+      - How deep should I sow [Jute](Vegetable)?
+      - How should I plant [Jute](Vegetable)?
+      - What is the ideal planting depth for [Mustard](Vegetable)?
+      - Tell me about sowing [Mustard](Vegetable).
+      - When should I sow [Mustard](Vegetable)?
+      - How deep do I plant [Mustard](Vegetable)?
+      - What spacing should I maintain for [Mustard](Vegetable)?
+      - When is the best time to sow [Broccoli](Vegetable)?
+      - How deep should I sow [Broccoli](Vegetable)?
+      - What's the ideal sowing method for [Broccoli](Vegetable)?
+      - What is the sowing process for [Broccoli](Vegetable)?
+
 
 #Vegetable Fertilization
   - intent: ask_about_Vegetable_Fertilization
@@ -158,6 +242,31 @@ nlu:
       - How should I apply fertilizers to [Sweet Potato](Vegetable)?
       - What is the fertilization method for [Grass Pea](Vegetable)?
       - Can you explain the fertilization schedule for [Chickpea](Vegetable)?
+      - How should I fertilize [Malabar Spinach](Vegetable)?
+      - What is the fertilization process for [Malabar Spinach](Vegetable)?
+      - Can you tell me about fertilizing [Malabar Spinach](Vegetable)?
+      - How do I apply fertilizer to [Malabar Spinach](Vegetable)?
+      - What fertilizers should I use for [Malabar Spinach](Vegetable)?
+      - Tell me about the fertilization process for [Corn](Vegetable).
+      - What fertilizers are best for [Corn](Vegetable)?
+      - How should I apply fertilizers to [Corn](Vegetable)?
+      - What is the fertilization method for [Corn](Vegetable)?
+      - Can you explain the fertilization schedule for [Corn](Vegetable)?
+      - How should I fertilize [Jute](Vegetable)?
+      - What is the fertilization process for [Jute](Vegetable)?
+      - Can you tell me about fertilizing [Jute](Vegetable)?
+      - How do I apply fertilizer to [Jute](Vegetable)?
+      - What fertilizers should I use for [Jute](Vegetable)?
+      - Tell me about the fertilization process for [Mustard](Vegetable).
+      - What fertilizers are best for [Mustard](Vegetable)?
+      - How should I apply fertilizers to [Mustard](Vegetable)?
+      - What is the fertilization method for [Mustard](Vegetable)?
+      - Can you explain the fertilization schedule for [Mustard](Vegetable)?
+      - How should I fertilize [Broccoli](Vegetable)?
+      - What is the fertilization process for [Broccoli](Vegetable)?
+      - Can you tell me about fertilizing [Broccoli](Vegetable)?
+      - How do I apply fertilizer to [Broccoli](Vegetable)?
+      - What fertilizers should I use for [Broccoli](Vegetable)?
 
 # Vegetable_Irrigation
   - intent: ask_about_Vegetable_Irrigation
@@ -168,6 +277,31 @@ nlu:
       - What is the irrigation process for [Felon Lentil](Vegetable)?
       - Can you tell me about irrigating [Pointed Gourd](Vegetable)?
       - How should I irrigate [Grass Pea](Vegetable)?
+      - How should I irrigate [Malabar Spinach](Vegetable)?
+      - What is the irrigation method for [Malabar Spinach](Vegetable)?
+      - How often should I irrigate [Malabar Spinach](Vegetable)?
+      - What is the irrigation process for [Malabar Spinach](Vegetable)?
+      - Can you tell me about irrigating [Malabar Spinach](Vegetable)?
+      - How should I irrigate [Corn](Vegetable)?
+      - What is the irrigation method for [Corn](Vegetable)?
+      - How often should I irrigate [Corn](Vegetable)?
+      - What is the irrigation process for [Corn](Vegetable)?
+      - Can you tell me about irrigating [Corn](Vegetable)?
+      - How should I irrigate [Jute](Vegetable)?
+      - What is the irrigation method for [Jute](Vegetable)?
+      - How often should I irrigate [Jute](Vegetable)?
+      - What is the irrigation process for [Jute](Vegetable)?
+      - Can you tell me about irrigating [Jute](Vegetable)?
+      - How should I irrigate [Mustard](Vegetable)?
+      - What is the irrigation method for [Mustard](Vegetable)?
+      - How often should I irrigate [Mustard](Vegetable)?
+      - What is the irrigation process for [Mustard](Vegetable)?
+      - Can you tell me about irrigating [Mustard](Vegetable)?
+      - How should I irrigate [Broccoli](Vegetable)?
+      - What is the irrigation method for [Broccoli](Vegetable)?
+      - How often should I irrigate [Broccoli](Vegetable)?
+      - What is the irrigation process for [Broccoli](Vegetable)?
+      - Can you tell me about irrigating [Broccoli](Vegetable)?
 
   - intent: ask_about_Vegetable_Growth_Stages_Irrigation
     examples: |
@@ -178,6 +312,16 @@ nlu:
       - What is the irrigation requirement for [Grass Pea](Vegetable) during flowering?
       - How often should I irrigate [Felon Lentil](Vegetable) during pod development?
       - What is the irrigation timeline for [Chickpea](Vegetable)?
+      - What is the irrigation schedule for [Malabar Spinach](Vegetable) during leaf development?
+      - Tell me about the irrigation during the growth stages of [Malabar Spinach](Vegetable).
+      - What is the irrigation schedule for [Corn](Vegetable) during the flowering stage?
+      - Tell me about the irrigation during the growth stages of [Corn](Vegetable).
+      - What are the Critical Growth Stages for Irrigation of [Jute](Vegetable)?
+      - How should I irrigate [Jute](Vegetable) during fiber development?
+      - What is the irrigation requirement for [Mustard](Vegetable) during flowering?
+      - How often should I irrigate [Mustard](Vegetable) during pod development?
+      - What is the irrigation timeline for [Broccoli](Vegetable)?
+      - How should I irrigate [Broccoli](Vegetable) during head formation?
 
   - intent: ask_about_Vegetable_Weed_Management
     examples: |
@@ -193,6 +337,16 @@ nlu:
       - How should I handle weed control in [Chickpea](Vegetable)?
       - What weed control methods work best for [Felon Lentil](Vegetable)?
       - How often should I weed [Pointed Gourd](Vegetable)?
+      - How should I manage weeds in [Malabar Spinach](Vegetable)?
+      - What is the weed control method for [Malabar Spinach](Vegetable)?
+      - Can you tell me about weed management for [Corn](Vegetable)?
+      - How do I control weeds in [Corn](Vegetable)?
+      - What is the weed management strategy for [Jute](Vegetable)?
+      - Tell me how to manage weeds in [Jute](Vegetable).
+      - How do I get rid of weeds in [Mustard](Vegetable)?
+      - What are the best practices for weed management in [Mustard](Vegetable)?
+      - Can you explain how to manage weeds in [Broccoli](Vegetable)?
+      - How should I handle weed control in [Broccoli](Vegetable)?
 #Pests and Diseases
   - intent: ask_about_Vegetable_Pests 
     examples: |
@@ -204,6 +358,17 @@ nlu:
       - Tell me how to manage pests in [Pointed Gourd](Vegetable).
       - How do I get rid of pests in [Potato](Vegetable)?
       - What are the best practices for pest management in [Sweet Potato](Vegetable)?
+      - Can you explain how to manage pests in [Malabar Spinach](Vegetable)?
+      - How should I handle pest control in [Malabar Spinach](Vegetable)?
+      - What pest control methods work best for [Corn](Vegetable)?
+      - How often should I control pests in [Corn](Vegetable)?
+      - How should I manage pests in [Jute](Vegetable)?
+      - What is the pest control method for [Jute](Vegetable)?
+      - Can you tell me about pest management for [Mustard](Vegetable)?
+      - How do I control pests in [Mustard](Vegetable)?
+      - What is the pest management strategy for [Broccoli](Vegetable)?
+      - Tell me how to manage pests in [Broccoli](Vegetable).
+
 
   - intent: ask_about_Vegetable_Diseases 
     examples: |
@@ -215,6 +380,17 @@ nlu:
       - Tell me how to manage diseases in [Pointed Gourd](Vegetable).
       - How do I get rid of diseases in [Potato](Vegetable)?
       - What are the best practices for disease management in [Sweet Potato](Vegetable)?
+      - Can you explain how to manage diseases in [Malabar Spinach](Vegetable)?
+      - How should I handle disease control in [Malabar Spinach](Vegetable)?
+      - What disease control methods work best for [Corn](Vegetable)?
+      - How often should I control diseases in [Corn](Vegetable)?
+      - How should I manage diseases in [Jute](Vegetable)?
+      - What is the disease control method for [Jute](Vegetable)?
+      - Can you tell me about disease management for [Mustard](Vegetable)?
+      - How do I control diseases in [Mustard](Vegetable)?
+      - What is the disease management strategy for [Broccoli](Vegetable)?
+      - Tell me how to manage diseases in [Broccoli](Vegetable).
+
 
 # Intent for asking about Aphids on Potato
   - intent: ask_about_Aphids_Potato
@@ -235,6 +411,11 @@ nlu:
       - What is the harvesting method for [Chickpea](Vegetable)?
       - How do I harvest [Felon Lentil](Vegetable)?
       - When should I start harvesting [Pointed Gourd](Vegetable)?
+      - What is the harvesting method for [Malabar Spinach](Vegetable)?
+      - When should I harvest [Corn](Vegetable)?
+      - What is the harvesting method for [Jute](Vegetable)?
+      - When should I harvest [Mustard](Vegetable)?
+      - Tell me about the harvest time for [Broccoli](Vegetable).
 
 
 # Intent for asking about yield and profitability for vegetables
@@ -247,6 +428,14 @@ nlu:
       - What is the production cost for [Felon Lentil](Vegetable)?
       - How much yield can I expect from [Pointed Gourd](Vegetable)?
       - How much profit can I make from [Potato](Vegetable)?
+      - Tell me about yield and profitability for [Malabar Spinach](Vegetable).
+      - What is the yield for [Corn](Vegetable)?
+      - How much profit can I make from [Corn](Vegetable)?
+      - What is the yield for [Jute](Vegetable)?
+      - Tell me about yield and profitability for [Jute](Vegetable).
+      - What is the yield for [Mustard](Vegetable)?
+      - How much can I earn from [Mustard](Vegetable)?
+      - What is the yield for [Broccoli](Vegetable)?
 
 # Intent for asking about the benefits of various vegetables
   - intent: ask_about_Vegetable_Benefits
@@ -261,3 +450,8 @@ nlu:
       - What makes [Sweet Potato](Vegetable) a good crop to grow?
       - Why is [Grass Pea](Vegetable) beneficial for the soil?
       - What is the economic importance of [Chickpea](Vegetable)?
+      - Can you tell me about the benefits of growing [Malabar Spinach](Vegetable
+      - What are the benefits of planting [Corn](Vegetable)?
+      - How does growing [Jute](Vegetable) help the environment?
+      - What are the benefits of planting [Mustard](Vegetable)?
+      - Why is [Broccoli](Vegetable) a good crop to grow?

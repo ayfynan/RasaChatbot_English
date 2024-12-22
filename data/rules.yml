@@ -12,14 +12,21 @@ rules:
       - intent: bot_challenge
       - action: utter_iamabot
 
+#vegetable intro
   - rule: Provide information about a vegetable when asked
     condition:
-      # This rule is triggered when the vegetable slot is set
       - slot_was_set:
           - Vegetable
     steps:
       - intent: ask_about_Vegetable
       - action: utter_about_Vegetable
+
+  - rule: Respond to plantation process
+    steps:
+      - intent: ask_plantation_process_potato
+      - action: utter_plantation_process_potato
+
+
 
 # Respond to land preparation 
   - rule: Respond to land preparation for potato
@@ -51,6 +58,32 @@ rules:
     steps:
       - intent: ask_land_preparation_pointed_gourd
       - action: utter_land_preparation_pointed_gourd
+
+  - rule: Respond to land preparation for Malabar Spinach
+    steps:
+      - intent: ask_land_preparation_malabar_spinach
+      - action: utter_land_preparation_malabar_spinach
+
+  - rule: Respond to land preparation for Corn
+    steps:
+      - intent: ask_land_preparation_corn
+      - action: utter_land_preparation_corn
+
+  - rule: Respond to land preparation for Jute
+    steps:
+      - intent: ask_land_preparation_jute
+      - action: utter_land_preparation_jute
+
+  - rule: Respond to land preparation for Mustard
+    steps:
+      - intent: ask_land_preparation_mustard
+      - action: utter_land_preparation_mustard
+
+  - rule: Respond to land preparation for Broccoli
+    steps:
+      - intent: ask_land_preparation_broccoli
+      - action: utter_land_preparation_broccoli
+
 #seed plantation
   - rule: Provide information for seed plantation about a vegetable when asked
     condition:

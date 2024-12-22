@@ -7,6 +7,7 @@ intents:
   - deny
   - mood_great
   - bot_challenge
+  - ask_plantation_process_potato
   - ask_about_Vegetable
   - ask_land_preparation_potato
   - ask_land_preparation_sweet_potato
@@ -14,6 +15,11 @@ intents:
   - ask_land_preparation_chickpea
   - ask_land_preparation_felon_lentil
   - ask_land_preparation_pointed_gourd
+  - ask_land_preparation_malabar_spinach
+  - ask_land_preparation_jute
+  - ask_land_preparation_corn
+  - ask_land_preparation_broccoli
+  - ask_land_preparation_mustard
   - ask_about_Vegetable_Seed
   - ask_about_Vegetable_Sowing
   - ask_about_Vegetable_Fertilization
@@ -55,6 +61,7 @@ slots:
         entity: Disease     
 
 actions:
+  - utter_plantation_process_potato
   - utter_about_Vegetable
   - utter_about_potato
   - utter_about_sweet_potato
@@ -64,6 +71,11 @@ actions:
   - utter_land_preparation_chickpea
   - utter_land_preparation_felon_lentil
   - utter_land_preparation_pointed_gourd
+  - utter_land_preparation_malabar_spinach
+  - utter_land_preparation_jute
+  - utter_land_preparation_corn
+  - utter_land_preparation_broccoli
+  - utter_land_preparation_mustard
   - utter_about_Vegetable_Seed
   - utter_about_Vegetable_Sowing
   - utter_about_Vegetable_Fertilization
@@ -95,13 +107,65 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." #customize it
 
+#Entire plantation process
+  utter_plantation_process_potato:
+    - text: |
+        "The entire process of potato plantation involves several steps: land preparation, sowing of seeds, fertilization, irrigation, weed management and etc."
+        
+        1. **Land Selection and Preparation**:
+          - Potatoes thrive in well-drained loamy or sandy loam soils with good organic matter. The ideal soil pH is between 5.5 and 6.5.
+          - **Plowing**: The land needs to be plowed 3-4 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+          - **Leveling**: The field should be leveled for uniform water distribution.
+          - **Organic Fertilizers**: Applying 8-10 tons of cow dung or compost per acre can improve fertility.
+          - **Soil Treatment**: In case of high soil salinity or acidity, lime or gypsum should be applied as required.
+
+        2. **Seed Selection and Preparation**:
+          - **Seed Type**: Certified and disease-free potato tubers are selected for planting. Popular varieties in Bangladesh include 'Diamant,' 'Granola,' 'Cardinal,' and local varieties like 'Lal Pakri' and 'Shil Bilati.'
+          - **Seed Size**: Seed tubers are cut into pieces weighing around 30-50 grams each, ensuring each piece has at least two “eyes” (the growing buds).
+          - **Seed Treatment**: Seed tubers are treated with fungicides like Mancozeb to prevent fungal diseases. After treatment, they are dried in a shaded area before planting.
+
+        3. **Sowing**:
+          - **Sowing Time**: Potato sowing typically begins in late October to early November, depending on weather conditions.
+          - **Planting Depth**: Seeds are sown at a depth of 8-10 cm, maintaining a distance of about 20-30 cm between each tuber in rows that are 60-75 cm apart.
+          - **Irrigation**: After planting, the first irrigation is done immediately to ensure proper seed germination.
+
+        4. **Fertilization Schedule**:
+          - **Balanced fertilization** is essential for good yields.
+          - **Basal Fertilizers (Before Planting)**:
+            - Urea: 50 kg
+            - Triple Super Phosphate (TSP): 50 kg
+            - Muriate of Potash (MoP): 40-50 kg
+            - Gypsum: 10-15 kg
+          - **Top Dressing**:
+            - First application of urea (40 kg) and MoP (20 kg) at 25-30 days after planting.
+            - Second top dressing (30 kg of urea) at the flowering stage.
+
+        5. **Irrigation Schedule**:
+          - Potatoes typically require 2-4 irrigations throughout the growing period, depending on the rainfall and soil moisture content.
+          - In well-drained soils, more frequent but lighter irrigations may be required.
+          - If irrigation systems like drip or sprinkler irrigation are used, the water efficiency can be improved, and the total water requirement may be slightly lower.
+
+        6. **Critical Growth Stages for Irrigation**:
+          - **Germination Stage**: This is right after planting. The first irrigation is provided to ensure proper seed germination.
+            - Water Requirement: 40-60 mm of water per hectare.
+          - **Tuber Initiation (30-40 days after planting)**: Potatoes are most sensitive to moisture stress during this stage. Irrigation is critical to support proper tuber formation.
+            - Water Requirement: 70-100 mm of water per hectare.
+          - **Tuber Bulking (60-90 days after planting)**: During this stage, the potato tubers grow rapidly. Adequate moisture is essential to ensure a high yield and good tuber quality.
+            - Water Requirement: 80-120 mm of water per hectare.
+          - **Maturity (90-120 days after planting)**: Toward the end of the growing season, water needs decrease. Over-irrigation at this stage can lead to rotting.
+            - Water Requirement: 40-60 mm of water per hectare.
+
+        7. **Weed Management**:
+          - Weeds must be controlled to avoid competition for nutrients and light.
+          - **Manual Weeding**: Perform the first weeding 15-20 days after planting, followed by another at 40-45 days.
+          - **Mulching**: Use organic mulches like straw to retain soil moisture and suppress weeds.
+
+
+
+
+
 # Responses for Vegetable information
   utter_about_Vegetable:
-    - condition:
-        - type: slot
-          name: Vegetable
-          value: Malabar spinach
-      text: "Malabar spinach, scientifically known as Basella alba (green-stemmed) or Basella rubra (red-stemmed), is a tropical perennial vine that is widely cultivated as an annual Vegetable."
     - condition:
         - type: slot
           name: Vegetable
@@ -132,6 +196,31 @@ responses:
           name: Vegetable
           value: Pointed Gourd
       text: "Pointed gourd (Trichosanthes dioica), locally known as 'Potol,' is a popular Vegetable crop in Bangladesh. It is a perennial, climbing crop cultivated for its tender fruits. Known for its adaptability to warm and humid climates, it is suitable for summer cultivation."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: "Malabar spinach (Basella alba), known locally as 'Pui Shaak,' is a leafy vegetable widely cultivated in Bangladesh due to its nutritional benefits and adaptability to various growing conditions."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: "Corn (Zea mays), known locally as 'Makka,' is a significant crop in Bangladesh, valued for its versatility and high yield potential."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: "Jute (Corchorus spp.), known locally as 'Pat,' is one of the most important cash crops in Bangladesh, valued for its fibers used in making ropes, bags, and various textiles."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: "Mustard (Brassica spp.), known locally as 'Sorse,' is a vital oilseed crop in Bangladesh, appreciated for its oil and culinary uses."
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: "Broccoli (Brassica oleracea var. italica) is a nutritious vegetable that is increasingly popular in Bangladesh due to its health benefits and versatility in cooking."
 
   utter_about_potato:
     - text: "Potato (Solanum tuberosum) is one of the major crops cultivated in Bangladesh, primarily during the winter (Rabi) season. It is valued for its adaptability, productivity, and economic importance."
@@ -194,6 +283,46 @@ responses:
         - **Leveling**: Level the field to ensure even water distribution and prevent waterlogging.
         - **Raised Beds or Pits**: Create raised beds, ridges, or small pits to avoid waterlogging and allow proper root development.
         - **Organic Fertilizers**: Incorporate 8-10 tons of cow dung or compost per acre to enhance soil fertility.
+
+  utter_land_preparation_malabar_spinach:
+    - text: |
+        **Land Selection and Preparation for Malabar Spinach**:
+        - Malabar spinach thrives in well-drained, fertile soils with good organic matter content. The ideal pH range for growth is between 6.0 and 7.0.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 15-20 cm to loosen the soil and remove weeds.
+        - **Leveling**: Level the field to ensure even water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-8 tons of decomposed cow dung or compost per acre during land preparation to enrich the soil.
+
+  utter_land_preparation_corn:
+    - text: |
+        **Land Selection and Preparation for Corn**:
+        - Corn grows best in well-drained, fertile soils with good organic matter. The ideal pH range for corn cultivation is between 5.8 and 7.0.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+        - **Leveling**: Level the field to ensure uniform water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-8 tons of decomposed cow dung or compost per acre during land preparation to enhance soil fertility.
+
+  utter_land_preparation_jute:
+    - text: |
+        **Land Selection and Preparation for Jute**:
+        - Jute thrives in well-drained, fertile soils with good organic matter. The ideal pH range for jute cultivation is between 6.0 and 7.0.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+        - **Leveling**: Level the field to ensure uniform water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-8 tons of decomposed cow dung or compost per acre during land preparation to enhance soil fertility.
+
+  utter_land_preparation_mustard:
+    - text: |
+        **Land Selection and Preparation for Mustard**:
+        - Mustard grows best in well-drained, fertile soils with good organic matter. The ideal pH range for mustard cultivation is between 6.0 and 7.5.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+        - **Leveling**: Level the field to ensure uniform water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-8 tons of decomposed cow dung or compost per acre during land preparation to enhance soil fertility.
+
+  utter_land_preparation_broccoli:
+    - text: |
+        **Land Selection and Preparation for Broccoli**:
+        - Broccoli thrives in well-drained, fertile soils rich in organic matter. The ideal pH range for broccoli cultivation is between 6.0 and 7.0.
+        - **Plowing**: The land should be plowed 2-3 times to a depth of 20-25 cm to loosen the soil and remove weeds.
+        - **Leveling**: Level the field to ensure uniform water distribution and prevent waterlogging.
+        - **Organic Fertilizers**: Apply 5-8 tons of decomposed cow dung or compost per acre during land preparation to enhance soil fertility.
 
 #Vegetable seed preparation
   utter_about_Vegetable_Seed:
@@ -266,6 +395,46 @@ responses:
             - **Spacing**: Maintain 1.5-2 meters between rows and 1 meter between plants within each row to allow sufficient space for the vines to spread.
             - **Support Structure**: Set up bamboo poles, ropes, or nets to create trellises for the climbing vines. This structure improves air circulation, supports the plant, and makes maintenance easier.
 
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Seed Selection and Preparation for Malabar Spinach**:
+        - **Seed Type**: Use certified and disease-free seeds from reliable sources.
+        - **Seed Treatment**: Treat seeds with fungicides like Mancozeb to prevent fungal infections before sowing.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Seed Selection and Preparation for Corn**:
+        - **Seed Type**: Use certified and disease-resistant seeds from reliable sources. Popular varieties in Bangladesh include 'Hybrid Corn' and local varieties suited to regional conditions.
+        - **Seed Treatment**: Treat seeds with fungicides like Mancozeb to prevent fungal infections before sowing.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Seed Selection and Preparation for Jute**:
+        - **Seed Type**: Use certified and disease-resistant seeds from reliable sources. Popular varieties in Bangladesh include 'JRO 524,' 'JRO 783,' and local varieties.
+        - **Seed Treatment**: Treat seeds with fungicides like Mancozeb to prevent fungal infections before sowing.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Seed Selection and Preparation for Mustard**:
+        - **Seed Type**: Use certified and disease-resistant seeds from reliable sources. Popular varieties in Bangladesh include 'BARI Sarson-14,' 'BARI Sarson-15,' and local varieties.
+        - **Seed Treatment**: Treat seeds with fungicides like Mancozeb to prevent fungal infections before sowing.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Seed Selection and Preparation for Broccoli**:
+        - **Seed Type**: Use certified seeds from reliable sources. Popular varieties in Bangladesh include 'BARI Broccoli-1' and 'Green Magic.'
+        - **Seed Treatment**: Treat seeds with fungicides like Mancozeb to prevent fungal infections before sowing.
 #Vegetable Sowing
   utter_about_Vegetable_Sowing:
   - condition:
@@ -333,7 +502,53 @@ responses:
       - **Line Sowing**: This method is preferred for better spacing and management, maintaining row-to-row spacing of 60-75 cm.
       - **Seed Depth**: Sow the seeds 3-4 cm deep in well-drained, fertile soil for optimal germination.
       - **Irrigation**: Ensure consistent irrigation, especially during dry spells, but avoid waterlogging as it can damage the roots.
- 
+
+  - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+    text: |
+        **Sowing Malabar Spinach**:
+        - **Sowing Time**: The best time to plant Malabar spinach is between March and April (pre-monsoon season) or September to October (post-monsoon season).
+        - **Spacing**: Maintain a spacing of 30-45 cm between rows and 15-20 cm between plants.
+        - **Planting Depth**: Sow seeds at a depth of 1-2 cm, ensuring good soil contact for germination.
+  - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+    text: |
+        **Sowing Corn**:
+        - **Sowing Time**: The best time for planting corn is from March to April (pre-monsoon) or September to October (post-monsoon).
+        - **Spacing**: Maintain a spacing of 75 cm between rows and 20-25 cm between plants within rows.
+        - **Planting Depth**: Sow seeds at a depth of 4-5 cm, ensuring good soil contact for germination.
+  - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+    text: |
+        **Sowing Jute**:
+        - **Sowing Time**: The best time for planting jute is from March to April (pre-monsoon) or June to July (post-monsoon).
+        - **Spacing**: Maintain a spacing of 30 cm between rows and 10 cm between plants within rows.
+        - **Planting Depth**: Sow seeds at a depth of 2-3 cm, ensuring good soil contact for germination.
+  - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+    text: |
+        **Sowing Mustard**:
+        - **Sowing Time**: The best time for planting mustard is from October to November (Rabi season).
+        - **Spacing**: Maintain a spacing of 30 cm between rows and 10 cm between plants within rows.
+        - **Planting Depth**: Sow seeds at a depth of 1-2 cm, ensuring good soil contact for germination.
+  - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+    text: |
+        **Sowing Broccoli**:
+        - **Sowing Time**: The best time for planting broccoli is from October to November (Rabi season) or February to March (early summer).
+        - **Spacing**: Maintain a spacing of 60 cm between rows and 30 cm between plants within rows.
+        - **Planting Depth**: Sow seeds at a depth of 1-2 cm, ensuring good soil contact for germination.
+
 #Vegetable Fertilization
   # Vegetable Fertilization
   utter_about_Vegetable_Fertilization:
@@ -420,6 +635,66 @@ responses:
         - **Organic Fertilizers**:
           - Incorporate organic manure regularly to maintain long-term soil fertility.
 
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Fertilization Schedule for Malabar Spinach**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 30 kg
+          - Triple Super Phosphate (TSP): 20 kg
+          - Muriate of Potash (MoP): 15 kg
+        - **Top Dressing**:
+          - Apply an additional 20 kg of urea per acre at the vegetative stage, approximately 25 days after planting.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Fertilization Schedule for Corn**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 80 kg
+          - Triple Super Phosphate (TSP): 50 kg
+          - Muriate of Potash (MoP): 40 kg
+        - **Top Dressing**:
+          - Apply an additional 40 kg of urea per acre at the knee-high stage (approximately 30 days after planting).
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Fertilization Schedule for Jute**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 50 kg
+          - Triple Super Phosphate (TSP): 40 kg
+          - Muriate of Potash (MoP): 30 kg
+        - **Top Dressing**:
+          - Apply an additional 30 kg of urea per acre at the vegetative stage, approximately 30 days after planting.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Fertilization Schedule for Mustard**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 40 kg
+          - Triple Super Phosphate (TSP): 30 kg
+          - Muriate of Potash (MoP): 20 kg
+        - **Top Dressing**:
+          - Apply an additional 20 kg of urea per acre at the vegetative stage, approximately 30 days after planting.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Fertilization Schedule for Broccoli**:
+        - **Basal Fertilizers (Before Planting)**:
+          - Urea: 50 kg
+          - Triple Super Phosphate (TSP): 40 kg
+          - Muriate of Potash (MoP): 30 kg
+        - **Top Dressing**:
+          - Apply an additional 30 kg of urea per acre at the vegetative stage, approximately 30 days after planting.
 # Irrigation Schedule for Vegetables
   utter_about_Vegetable_Irrigation:
     - condition:
@@ -478,6 +753,56 @@ responses:
         - Pointed gourd requires consistent moisture throughout its growth cycle, especially during fruit setting.
         - **First Irrigation**: Provide the first irrigation immediately after planting.
         - **Subsequent Irrigations**: Water the field every 7-10 days, depending on soil moisture and weather conditions.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Irrigation for Malabar Spinach**:
+        - Malabar spinach requires consistent moisture, especially during dry spells.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper seed germination.
+        - **Subsequent Irrigations**: Water the crop every 5-7 days, depending on soil moisture conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Irrigation for Corn**:
+        - Corn requires adequate moisture, especially during critical growth stages.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper seed germination.
+        - **Subsequent Irrigations**: Water the crop every 7-10 days, depending on rainfall and soil moisture conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Irrigation for Jute**:
+        - Jute requires adequate moisture, especially during critical growth stages.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper seed germination.
+        - **Subsequent Irrigations**: Water the crop every 7-10 days, depending on rainfall and soil moisture conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Irrigation for Mustard**:
+        - Mustard requires adequate moisture, especially during critical growth stages.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper seed germination.
+        - **Subsequent Irrigations**: Water the crop every 7-10 days, depending on rainfall and soil moisture conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Irrigation for Broccoli**:
+        - Broccoli requires consistent moisture, especially during critical growth stages.
+        - **First Irrigation**: Provide water immediately after planting to ensure proper seed germination.
+        - **Subsequent Irrigations**: Water the crop every 7-10 days, depending on rainfall and soil moisture conditions.
+
 
 # Growth stages irrigation for Potato, Sweet Potato, Grass Pea, Chickpea, Felon Lentil, and Pointed Gourd
   utter_about_Vegetable_Growth_Stages_Irrigation:
@@ -554,7 +879,56 @@ responses:
           - Ensure adequate moisture for fruit development.
         - **Tuber Growth in Rooted Plants**:
           - Maintain regular moisture without waterlogging.
-        
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Critical Growth Stages for Irrigation - Malabar Spinach**:
+        - **Vegetative Growth (15-30 days after planting)**: Ensure adequate moisture for leaf development.
+        - **Flowering Stage (45 days after planting)**: Maintain moisture to support flowering and seed formation.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Critical Growth Stages for Irrigation - Corn**:
+        - **Germination Stage**: Ensure moisture for seed germination right after planting.
+        - **Vegetative Stage (30-45 days after planting)**: Adequate moisture is critical for leaf development and overall growth.
+        - **Flowering Stage (60 days after planting)**: Maintain moisture to support pollination and kernel formation.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Critical Growth Stages for Irrigation - Jute**:
+        - **Germination Stage**: Ensure moisture for seed germination right after planting.
+        - **Vegetative Stage (30-45 days after planting)**: Adequate moisture is critical for leaf development and overall growth.
+        - **Flowering Stage (60 days after planting)**: Maintain moisture to support flowering and fiber development.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Critical Growth Stages for Irrigation - Mustard**:
+        - **Germination Stage**: Ensure moisture for seed germination right after planting.
+        - **Vegetative Stage (30 days after planting)**: Adequate moisture is critical for leaf development.
+        - **Flowering Stage (60 days after planting)**: Maintain moisture to support flowering and pod formation.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Critical Growth Stages for Irrigation - Broccoli**:
+        - **Germination Stage**: Ensure moisture for seed germination right after planting.
+        - **Vegetative Stage (30 days after planting)**: Adequate moisture is critical for leaf development.
+        - **Flowering Stage (60 days after planting)**: Maintain moisture to support head formation.
+          
 # Weed Management
   utter_about_Vegetable_Weed_Management:
     - condition:
@@ -611,7 +985,50 @@ responses:
         - **Manual Weeding**: Perform the first weeding 15-20 days after planting. Conduct subsequent weeding every 20-30 days as needed.
         - **Mulching**: Use organic mulches like straw or dry leaves to suppress weeds and retain soil moisture.
 
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Weed Management for Malabar Spinach**:
+        - **Manual Weeding**: Perform the first weeding 15-20 days after planting, followed by another weeding at around 40 days.
+        - **Mulching**: Use organic mulches like straw to suppress weed growth and retain soil moisture.
 
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Weed Management for Corn**:
+        - **Manual Weeding**: Conduct weeding approximately 15-20 days after planting, followed by another weeding at around 40 days.
+        - **Mulching**: Use organic mulches like straw to suppress weed growth and retain soil moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Weed Management for Jute**:
+        - **Manual Weeding**: Conduct weeding approximately 15-20 days after planting, followed by another weeding at around 40 days.
+        - **Mulching**: Use organic mulches like straw to suppress weed growth and retain soil moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Weed Management for Mustard**:
+        - **Manual Weeding**: Conduct weeding approximately 15-20 days after planting, followed by another weeding at around 40 days.
+        - **Mulching**: Use organic mulches like straw to suppress weed growth and retain soil moisture.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Weed Management for Broccoli**:
+        - **Manual Weeding**: Conduct weeding approximately 15-20 days after planting, followed by another weeding at around 40 days.
+        - **Mulching**: Use organic mulches like straw to suppress weed growth and retain soil moisture.
 #Vegetable pest for all vegetables
   utter_about_Vegetable_Pests:
     - condition:
@@ -722,6 +1139,108 @@ responses:
           - Control: Beneficial nematodes, remove plant debris.
           - Quantity: Beneficial Nematodes as directed by manufacturer.
           - Frequency: Apply once early in the season or as needed.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Pest Management for Malabar Spinach**:
+        - **Aphids**:
+          - Control: Spray with a strong jet of water or use insecticidal soap.
+          - Quantity per Acre: 2-4 quarts of Insecticidal Soap solution.
+          - Frequency: Reapply every 5-7 days as needed.
+        - **Leaf Miners**:
+          - Control: Remove and destroy infected leaves; use pesticides if infestation is severe.
+          - Quantity per Acre: As per label instructions of pesticides.
+          - Frequency: Apply as needed when infestation is detected.
+        - **Snails and Slugs**:
+          - Control: Hand-pick pests in the evening or use organic bait.
+          - Quantity per Acre: As per product guidelines for Organic Bait.
+          - Frequency: Monitor regularly; apply bait as needed.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Pest Management for Corn**:
+        - **Spotted Stem Borer**:
+          - Control: Destroy stubbles, release Trichogramma chilonis, spray if infestation exceeds 10%.
+          - Quantity per Acre: Chlorantraniliprole 18.5 SC: 150ml/ha.
+          - Frequency: Release Trichogramma at 7 and 15 days after germination; spray as needed.
+        - **Fall Armyworm**:
+          - Control: Install pheromone traps, apply neem-based products, use chemical control if severe.
+          - Quantity per Acre: Neem seed kernel extract: 5% solution.
+          - Frequency: Monitor regularly, apply at first sign of infestation.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Pest Management for Jute**:
+        - **Yellow Mite**:
+          - Control: Spray acaricides or neem oil.
+          - Quantity per Acre: Neem Oil: 1-2 quarts of solution.
+          - Frequency: Reapply every 7-10 days during infestation.
+        - **Jute Semilooper**:
+          - Control: Use Bacillus thuringiensis (Bt) or neem-based insecticides.
+          - Quantity per Acre: Bt: 1-2 pints in water solution.
+          - Frequency: Every 7-10 days or as needed during infestations.
+        - **Mealy Bug**:
+          - Control: Spray systemic insecticides like endosulfan or carbaryl.
+          - Quantity per Acre: Endosulfan/Carbaryl: As per label instructions.
+          - Frequency: Weekly or as needed during outbreaks.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Pest Management for Mustard**:
+        - **Aphid**:
+          - Control: Timely sowing, avoid excess nitrogen, spray pesticides if infestation observed.
+          - Quantity per Acre: Thiamethoxam: 80g or Quinalphos/Oxydemeton: 250ml.
+          - Frequency: Apply when 20-25 aphids/plant or 30% plants infested.
+        - **Painted Bug**:
+          - Control: Irrigation 3-4 weeks after sowing, spray if infestation observed.
+          - Quantity per Acre: Malathion: 400ml.
+          - Frequency: Apply when infestation is observed.
+        - **Hairy Caterpillar**:
+          - Control: Spray insecticides if infestation observed.
+          - Quantity per Acre: Malathion 5% dust: 15kg or Dichlorvos: 200ml.
+          - Frequency: Apply when infestation is observed.
+        - **Orobanche (Broomrape)**:
+          - Control: Apply soybean oil to young Orobanche shoots.
+          - Quantity per Acre: Two drops per young shoot.
+          - Frequency: Apply when Orobanche shoots emerge.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Pest Management for Broccoli**:
+        - **Cabbageworms**:
+          - Control: Use Bacillus thuringiensis (Bt), row covers, or spinosad.
+          - Quantity per Acre: Bt: 1-2 pints in water solution.
+          - Frequency: Every 7-10 days or as needed during infestations.
+        - **Aphids**:
+          - Control: Blast with water or use neem oil.
+          - Quantity per Acre: Neem Oil: 1-2 quarts of solution.
+          - Frequency: Reapply every 4-7 days as needed.
+        - **Flea Beetles**:
+          - Control: Use row covers, neem oil, or trap crops like radish or mustard.
+          - Quantity per Acre: Neem Oil: 1-2 quarts of solution.
+          - Frequency: Apply as needed; row covers can be left in place until plants are established.
+        - **Cutworms**:
+          - Control: Use collars around seedlings or apply Bt spray.
+          - Quantity per Acre: Bt: 1-2 pints in water solution.
+          - Frequency: Apply as needed during early growth stages.
+        - **Cabbage White Butterflies**:
+          - Control: Use row covers or companion planting with dill, chamomile, or cilantro to deter pests.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Maintain row covers throughout the season; companion plants should be interplanted.
+
 
 
   utter_about_Vegetable_Diseases:
@@ -808,6 +1327,141 @@ responses:
         - **Alternaria Leaf Spot**:
           - Control: Copper fungicide spray.
           - Frequency: Apply every 7-10 days as needed.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Disease Management for Malabar Spinach**:
+        - **Nematodes**:
+          - Control: Use resistant varieties, crop rotation, and maintain healthy soil conditions.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Rotate crops annually; monitor soil health regularly.
+        - **Fungal Leaf Spots**:
+          - Control: Remove infected leaves, ensure good air circulation, and apply fungicides if needed.
+          - Quantity per Acre: As per label instructions of fungicide.
+          - Frequency: Apply at the first sign of infection; repeat weekly if necessary.
+        - **Root Rot**:
+          - Control: Ensure proper soil drainage and avoid overwatering.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Regularly monitor soil moisture; improve drainage if waterlogging occurs.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Disease Management for Corn**:
+        - **Anthracnose Leaf Blight**:
+          - Control: Remove infected residue, use resistant varieties, apply fungicides if needed.
+          - Quantity per Acre: Fungicide: As per label instructions.
+          - Frequency: Apply at first sign of infection, repeat if necessary.
+        - **Gray Leaf Spot**:
+          - Control: Crop rotation, resistant hybrids, foliar fungicides.
+          - Quantity per Acre: Fungicide: As per label instructions.
+          - Frequency: Apply when disease is first detected, repeat as needed.
+        - **Northern Leaf Blight**:
+          - Control: Plant resistant hybrids, crop rotation, timely fungicide application.
+          - Quantity per Acre: Fungicide: As per label instructions.
+          - Frequency: Apply at first sign of disease, repeat if conditions favor disease development.
+        - **Common and Southern Rust**:
+          - Control: Plant early, use resistant hybrids, apply fungicides.
+          - Quantity per Acre: Fungicide: As per label instructions.
+          - Frequency: Monitor closely, apply when rust is first detected.
+        - **Eyespot**:
+          - Control: Crop rotation, tillage, resistant hybrids, fungicides if severe.
+          - Quantity per Acre: Fungicide: As per label instructions.
+          - Frequency: Apply if disease becomes severe before tasseling.
+        - **Fusarium Stalk Rot**:
+          - Control: Maintain balanced soil fertility, avoid plant stress, use resistant hybrids.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Implement preventive measures throughout the growing season.
+        - **Gibberella Stalk Rot**:
+          - Control: Crop rotation, balanced fertilization, harvest timely.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Monitor throughout the season, especially during grain fill.
+        - **Diplodia Stalk Rot**:
+          - Control: Use resistant hybrids, maintain plant health, avoid high plant populations.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Implement preventive measures throughout the growing season.
+        - **Maize Lethal Necrosis Disease**:
+          - Control: Use disease-free seeds, control vectors, remove infected plants.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Implement preventive measures throughout the growing season.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Disease Management for Jute**:
+        - **Stem Rot**:
+          - Control: Seed treatment with Carbendazim 50 WP, soil treatment with fungicides, and use of Trichoderma viride.
+          - Quantity per Acre: Carbendazim: 2 g/kg of seed or 2 g/l of water.
+          - Frequency: Apply at sowing and during crop growth as needed.
+        - **Black Band Disease**:
+          - Control: Remove infected plants, apply Carbendazim or Mancozeb fungicide.
+          - Quantity per Acre: Carbendazim: 2 g/l of water.
+          - Frequency: Apply at the first sign of infection and repeat as needed.
+        - **Hooghly Wilt**:
+          - Control: Crop rotation with non-host crops like rice or wheat; improve drainage.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Rotate crops annually; ensure proper field drainage.
+        - **Soft Rot**:
+          - Control: Use cultural practices like crop sanitation and avoid waterlogging; apply fungicides if necessary.
+          - Quantity per Acre: Fungicides: As per label instructions.
+          - Frequency: Regular monitoring; apply fungicides at the first sign of infection.
+        - **Anthracnose**:
+          - Control: Remove infected plant debris; treat seeds with fungicides like Mancozeb before sowing.
+          - Quantity per Acre: Mancozeb: 5 g/kg of seed.
+          - Frequency: Apply at sowing and monitor for symptoms during crop growth.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Disease Management for Mustard**:
+        - **Alternaria Blight**:
+          - Control: Use resistant varieties, spray fungicides.
+          - Quantity per Acre: Indofil M-45 or Captan: 260g/100L water.
+          - Frequency: Apply at first sign of infection, repeat every 15 days if necessary.
+        - **Downy Mildew**:
+          - Control: Destroy previous crop debris, spray fungicides.
+          - Quantity per Acre: Indofil M-45: 400g in 150L water.
+          - Frequency: Apply 4 times with 15-day intervals.
+        - **White Rust**:
+          - Control: Spray fungicides when infestation observed.
+          - Quantity per Acre: Metalaxyl 8% + Mancozeb 64%: 2g/L or Copper oxychloride: 25g/L.
+          - Frequency: Apply at first sign, repeat every 10-15 days if needed.
+        - **Powdery Mildew**:
+          - Control: Spray fungicides if severe.
+          - Quantity per Acre: Karathane or Carbendazim: 0.05-0.1%.
+          - Frequency: Apply when disease becomes severe.
+        - **Sclerotinia Rot**:
+          - Control: Crop rotation, avoid monocropping.
+          - Quantity per Acre: No specific chemical mentioned.
+          - Frequency: Implement preventive measures throughout the season.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Disease Management for Broccoli**:
+        - **Powdery Mildew**:
+          - Control: Apply neem oil or baking soda solution.
+          - Quantity per Acre: Baking Soda Solution: 1 gallon.
+          - Frequency: Weekly during dry conditions.
+        - **Black Rot**:
+          - Control: Rotate crops and remove infected plants.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Regular monitoring; avoid planting in previously infected areas for at least 3 years.
+        - **Root Rot**:
+          - Control: Improve soil drainage and avoid overwatering.
+          - Quantity per Acre: No direct chemical application.
+          - Frequency: Regularly monitor soil moisture and drainage.
+
 # Pest management for Aphids on Potato
   utter_about_Aphids_Potato:
     - condition:
@@ -938,6 +1592,90 @@ responses:
         - **Sorting**: Sort fruits based on size and quality.
         - **Packaging**: Pack in bamboo baskets or crates.
         - **Storage**: Store in a cool, shaded place for 2-3 days.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Harvesting for Malabar Spinach**:
+        - **Harvesting Time**: 30-45 days after planting, depending on growing conditions.
+        - **Signs of Maturity**:
+          - Leaves are tender and vibrant green.
+          - Harvesting can continue as needed throughout the growing season.
+        - **Harvesting Method**:
+          - Cut leaves and stems carefully using a sharp knife or shears to avoid damage to the plant.
+
+        **Post-Harvest Handling for Malabar Spinach**:
+        - **Sorting**: Sort harvested leaves based on size and quality.
+        - **Storage**: Store in a cool, shaded area to maintain freshness; ideally, keep at temperatures around 10°C to prolong shelf life.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Harvesting for Corn**:
+        - **Harvesting Time**: 90-120 days after planting, depending on the variety and growing conditions.
+        - **Signs of Maturity**:
+          - The husks turn brown.
+          - Kernels are hard, and moisture content decreases significantly.
+        - **Harvesting Method**:
+          - Use hand tools or mechanical harvesters to cut the ears from the stalks carefully.
+
+        **Post-Harvest Handling for Corn**:
+        - **Sorting**: Sort harvested ears based on size and quality.
+        - **Storage**: Store in a cool, dry place with good ventilation to prevent spoilage; ideal storage temperature is around 10°C.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Harvesting for Jute**:
+        - **Harvesting Time**: 120-150 days after planting, depending on the variety and growing conditions.
+        - **Signs of Maturity**:
+          - The leaves turn yellow, and the fibers become strong.
+          - Harvesting should occur before the pods burst open.
+        - **Harvesting Method**:
+          - Cut the plants close to the ground using sharp sickles or knives to avoid damage to the fibers.
+
+        **Post-Harvest Handling for Jute**:
+        - **Retting**: Soak harvested jute plants in water for about 7-14 days to separate fibers from the stalks effectively.
+        - **Drying**: After retting, dry the fibers in the shade to prevent discoloration.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Harvesting for Mustard**:
+        - **Harvesting Time**: 90-120 days after planting, depending on the variety and growing conditions.
+        - **Signs of Maturity**:
+          - The leaves turn yellow, and pods become dry.
+          - Harvesting should occur when seeds are firm but before they shatter.
+        - **Harvesting Method**:
+          - Cut the plants close to the ground using sharp sickles or knives to avoid damage to the seeds.
+
+        **Post-Harvest Handling for Mustard**:
+        - **Threshing**: After harvesting, thresh the seeds from the pods using manual or mechanical methods.
+        - **Drying**: Dry the seeds in a shaded area to reduce moisture content before storage.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Harvesting for Broccoli**:
+        - **Harvesting Time**: 70-100 days after planting, depending on the variety and growing conditions.
+        - **Signs of Maturity**:
+          - The heads are firm, compact, and dark green.
+          - Harvest before the buds begin to open.
+        - **Harvesting Method**:
+          - Cut the heads carefully with a sharp knife, leaving a few inches of stem attached.
+
+        **Post-Harvest Handling for Broccoli**:
+        - **Sorting**: Sort harvested broccoli based on size and quality.
+        - **Storage**: Store in a cool, shaded area or refrigerate at temperatures around 0°C to maintain freshness.
 
 
 # General response for yield and profitability for any vegetable
@@ -1001,6 +1739,65 @@ responses:
         - **Yield**: 8-10 tons per acre.
         - **Cost of Production**: BDT 30,000-45,000 per acre (includes land preparation, planting materials, fertilizers, labor, and pest management).
         - **Market Value**: BDT 20-30 per kg; revenue can range from BDT 160,000-300,000 per acre.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Yield and Profitability for Malabar Spinach**:
+        - **Yield**: A well-managed crop can produce approximately 2-4 tons per acre.
+        - **Cost of Production**: 
+          - Costs including land preparation, seeds, fertilizers, irrigation, labor, and pest management may range from BDT 25,000 to BDT 35,000 per acre.
+        - **Market Value**:
+          - With an average price of BDT 20-30 per kg, revenue can range from BDT 40,000 to BDT 120,000 per acre depending on market conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Yield and Profitability for Corn**:
+        - **Yield**: A well-managed crop can produce approximately 6-10 tons per acre.
+        - **Cost of Production**:
+          - Costs including land preparation, seeds, fertilizers, irrigation, labor, and pest management may range from BDT 35,000 to BDT 55,000 per acre.
+        - **Market Value**:
+          - With an average price of BDT 15-25 per kg, revenue can range from BDT 90,000 to BDT 250,000 per acre depending on market conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Yield and Profitability for Jute**:
+        - **Yield**: A well-managed crop can produce approximately 2-3 tons of raw jute per acre.
+        - **Cost of Production**:
+          - Costs including land preparation, seeds, fertilizers, irrigation, labor, and pest management may range from BDT 25,000 to BDT 40,000 per acre.
+        - **Market Value**:
+          - With an average price of BDT 30-50 per kg, revenue can range from BDT 60,000 to BDT 150,000 per acre depending on market conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Yield and Profitability for Mustard**:
+        - **Yield**: A well-managed crop can produce approximately 1.5 to 2 tons of mustard seeds per acre.
+        - **Cost of Production**:
+          - Costs including land preparation, seeds, fertilizers, irrigation, labor, and pest management may range from BDT 25,000 to BDT 35,000 per acre.
+        - **Market Value**:
+          - With an average price of BDT 80-120 per kg, revenue can range from BDT 120,000 to BDT 240,000 per acre depending on market conditions.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Yield and Profitability for Broccoli**:
+        - **Yield**: A well-managed crop can produce approximately 2-4 tons per acre.
+        - **Cost of Production**:
+          - Costs including land preparation, seeds, fertilizers, irrigation, labor, and pest management may range from BDT 30,000 to BDT 50,000 per acre.
+        - **Market Value**:
+          - With an average price of BDT 40-80 per kg, revenue can range from BDT 80,000 to BDT 320,000 per acre depending on market conditions.
 
 
 # General response for benefits of cultivation for any vegetable
@@ -1064,6 +1861,61 @@ responses:
         - **High Market Demand**: Pointed gourd is widely consumed, making it a profitable crop.
         - **Perennial Crop**: With proper care, pointed gourd vines can produce for 3-4 years.
         - **Soil Health Improvement**: Pointed gourd requires minimal chemical inputs, making it a sustainable crop for long-term cultivation.
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Malabar Spinach
+      text: |
+        **Benefits of Malabar Spinach Cultivation**:
+        - **Heat Tolerance**: Malabar spinach thrives in hot and humid conditions, making it ideal for tropical climates.
+        - **Soil Fertility Improvement**: As a fast-growing leafy vegetable, it helps maintain soil structure and reduces erosion.
+        - **Nutritional Value**: Malabar spinach is rich in vitamins A and C, calcium, and iron, offering significant health benefits.
+        - **Economic Importance**: It is increasingly popular in local markets due to its health benefits and fast-growing nature.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Corn
+      text: |
+        **Benefits of Corn Cultivation**:
+        - **High Yield**: Corn is a high-yield crop, making it an essential food source and a valuable commodity.
+        - **Economic Versatility**: Besides food, corn is used in biofuels, animal feed, and industrial products, increasing its economic value.
+        - **Soil Fertility Improvement**: Corn provides organic matter to the soil, enhancing soil structure and fertility.
+        - **Water Use Efficiency**: Modern corn varieties are more water-efficient, allowing for cultivation in various environments.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Jute
+      text: |
+        **Benefits of Jute Cultivation**:
+        - **Eco-friendly Fiber**: Jute is a biodegradable fiber, making it an environmentally sustainable alternative to synthetic materials.
+        - **Soil Erosion Control**: Jute's deep root system helps in preventing soil erosion, especially in flood-prone areas.
+        - **Economic Importance**: Jute is in demand globally for making ropes, sacks, and textiles, offering good market potential.
+        - **Drought Tolerance**: Jute can tolerate moderate drought conditions and grows well in areas with erratic rainfall.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Mustard
+      text: |
+        **Benefits of Mustard Cultivation**:
+        - **Soil Fertility Improvement**: Mustard is a nitrogen-fixing crop, which enhances soil fertility for subsequent crops.
+        - **Pest Control**: Mustard has natural pest-repellent properties, helping reduce the need for chemical pesticides.
+        - **Oilseed Production**: Mustard is a major oilseed crop, providing edible oil with numerous health benefits.
+        - **Economic Value**: Mustard is widely used in cooking, and its seeds have high market demand both locally and internationally.
+
+    - condition:
+        - type: slot
+          name: Vegetable
+          value: Broccoli
+      text: |
+        **Benefits of Broccoli Cultivation**:
+        - **Nutritional Value**: Broccoli is a rich source of vitamins, minerals, and antioxidants, promoting better health.
+        - **Short Growing Period**: Broccoli can be harvested relatively quickly (70-100 days), making it a fast-growing and high-turnover crop.
+        - **Soil Health**: Broccoli's deep roots help to improve soil structure and promote better water infiltration.
+        - **Economic Importance**: Broccoli has strong market demand, especially in health-conscious markets, and can fetch a premium price.
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
